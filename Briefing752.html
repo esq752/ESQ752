@@ -1,0 +1,3829 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: inherit;
+        }
+
+        html {
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        section {
+            display: block;
+        }
+
+        summary {
+            display: list-item;
+        }
+
+        canvas {
+            display: inline-block;
+        }
+
+        [hidden] {
+            display: none;
+        }
+
+        a {
+            background-color: transparent;
+        }
+
+        a:active,
+        a:hover {
+            outline-width: 0;
+        }
+
+        b {
+            font-weight: bolder;
+        }
+
+        small {
+            font-size: 80%;
+        }
+
+        code {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+
+        button,
+        input,
+        select {
+            margin: 0;
+        }
+
+        button,
+        input {
+            overflow: visible;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        [type="button"],
+        [type="reset"],
+        [type="submit"],
+        button {
+            -webkit-appearance: button;
+        }
+
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner,
+        button::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        [type="button"]:-moz-focusring,
+        [type="reset"]:-moz-focusring,
+        [type="submit"]:-moz-focusring,
+        button:-moz-focusring {
+            outline: 1px dotted ButtonText;
+        }
+
+        fieldset {
+            border: 1px solid silver;
+            margin: 0 2px;
+            padding: 0.35em 0.625em 0.75em;
+        }
+
+        [type="checkbox"],
+        [type="radio"] {
+            padding: 0;
+        }
+
+        [type="number"]::-webkit-inner-spin-button,
+        [type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+
+        [type="search"] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px;
+        }
+
+        [type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit;
+        }
+
+        body,
+        html {
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        html {
+            overflow-x: visible;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+
+        h5 {
+            font-size: 18px;
+        }
+
+        h6 {
+            font-size: 16px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .w3-table,
+        .w3-table-all {
+            border-collapse: separate;
+            border-spacing: 2;
+            width: 100%;
+            display: table;
+        }
+
+        .w3-table-all {
+            border: 1px solid #ccc;
+        }
+
+        .w3-table-all tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .w3-table-all td:nth-child(1) {
+            width: 1%;
+            white-space: nowrap;
+        }
+
+        .w3-table-all td:nth-child(2) {
+            width: 1%;
+            white-space: nowrap;
+        }
+
+        .w3-table-all td:nth-child(11) {
+            width: 1%;
+            white-space: nowrap;
+        }
+
+        .w3-striped tbody tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        .w3-table-all tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        .w3-table-all tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        .w3-centered tr td,
+        .w3-centered tr th {
+            text-align: center;
+        }
+
+        .w3-table td,
+        .w3-table th,
+        .w3-table-all td,
+        .w3-table-all th {
+            padding: 8px 8px;
+            display: table-cell;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .w3-table-all td,
+        .w3-table-all th {
+            font-size: 1.6vw;
+            font-weight: 300;
+            padding: 5px;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+
+        .w3-btn,
+        .w3-button {
+            border: none;
+            display: inline-block;
+            padding: 8px 16px;
+            vertical-align: middle;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            background-color: inherit;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .w3-btn:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .w3-btn,
+        .w3-button {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .w3-btn:disabled,
+        .w3-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.3;
+        }
+
+        :disabled * {
+            pointer-events: none;
+        }
+
+        .w3-btn:disabled:hover {
+            box-shadow: none;
+        }
+
+        .w3-tag {
+            background-color: #000;
+            color: #fff;
+            display: inline-block;
+            padding-left: 8px;
+            padding-right: 8px;
+            text-align: center;
+        }
+
+        .w3-display-container,
+        .w3-tooltip {
+            position: relative;
+        }
+
+        .w3-tooltip .w3-text {
+            display: none;
+        }
+
+        .w3-tooltip:hover .w3-text {
+            display: inline-flex;
+            flex-direction: column;
+        }
+
+        .w3-ripple:active {
+            opacity: 0.5;
+        }
+
+        .w3-ripple {
+            transition: opacity 0s;
+        }
+
+        .w3-input {
+            padding: 8px;
+            display: block;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+
+        .w3-select {
+            padding: 9px 0;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .w3-check,
+        .w3-radio {
+            position: relative;
+        }
+
+        .w3-modal {
+            z-index: 3;
+            display: none;
+            padding-top: 100px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: #000;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .w3-modal-content {
+            margin: auto;
+            background-color: #fff;
+            position: relative;
+            padding: 0;
+            outline: 0;
+            width: 600px;
+        }
+
+        .w3-bar {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .w3-center .w3-bar {
+            display: inline-block;
+            width: auto;
+        }
+
+        .w3-bar .w3-bar-item {
+            padding: 8px 16px;
+            float: left;
+            width: auto;
+            border: none;
+            display: block;
+            outline: 0;
+        }
+
+        .w3-bar .w3-button {
+            white-space: normal;
+        }
+
+        .w3-bar-block .w3-bar-item {
+            width: 100%;
+            display: block;
+            padding: 8px 16px;
+            text-align: left;
+            border: none;
+            white-space: normal;
+            float: none;
+            outline: 0;
+        }
+
+        .w3-bar-block.w3-center .w3-bar-item {
+            text-align: center;
+        }
+
+        .w3-block {
+            display: block;
+            width: 100%;
+        }
+
+        .w3-responsive {
+            display: block;
+            overflow-x: auto;
+        }
+
+        .w3-bar:after,
+        .w3-bar:before,
+        .w3-cell-row:after,
+        .w3-cell-row:before,
+        .w3-container:after,
+        .w3-container:before,
+        .w3-panel:after,
+        .w3-panel:before,
+        .w3-row-padding:after,
+        .w3-row-padding:before,
+        .w3-row:after,
+        .w3-row:before {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .w3-col {
+            float: left;
+            width: 100%;
+        }
+
+        .w3-col.s1 {
+            width: 8.33333%;
+        }
+
+        .w3-col.s2 {
+            width: 16.66666%;
+        }
+
+        .w3-col.s3 {
+            width: 24.99999%;
+        }
+
+        .w3-col.s4 {
+            width: 33.33333%;
+        }
+
+        .w3-col.s5 {
+            width: 41.66666%;
+        }
+
+        .w3-col.s6 {
+            width: 49.99999%;
+        }
+
+        .w3-col.s7 {
+            width: 58.33333%;
+        }
+
+        .w3-col.s8 {
+            width: 66.66666%;
+        }
+
+        .w3-col.s9 {
+            width: 74.99999%;
+        }
+
+        .w3-col.s10 {
+            width: 83.33333%;
+        }
+
+        .w3-col.s11 {
+            width: 91.66666%;
+        }
+
+        .w3-col.s12 {
+            width: 99.99999%;
+        }
+
+        @media (min-width: 601px) {
+            .w3-col.m1 {
+                width: 8.33333%;
+            }
+
+            .w3-col.m2 {
+                width: 16.66666%;
+            }
+
+            .w3-col.m3 {
+                width: 24.99999%;
+            }
+
+            .w3-col.m4 {
+                width: 33.33333%;
+            }
+
+            .w3-col.m5 {
+                width: 41.66666%;
+            }
+
+            .w3-col.m6 {
+                width: 49.99999%;
+            }
+
+            .w3-col.m7 {
+                width: 58.33333%;
+            }
+
+            .w3-col.m8 {
+                width: 66.66666%;
+            }
+
+            .w3-col.m9 {
+                width: 74.99999%;
+            }
+
+            .w3-col.m10 {
+                width: 83.33333%;
+            }
+
+            .w3-col.m11 {
+                width: 91.66666%;
+            }
+
+            .w3-col.m12 {
+                width: 99.99999%;
+            }
+        }
+
+        @media (min-width: 993px) {
+            .w3-col.l1 {
+                width: 8.33333%;
+            }
+
+            .w3-col.l2 {
+                width: 16.66666%;
+            }
+
+            .w3-col.l3 {
+                width: 24.99999%;
+            }
+
+            .w3-col.l4 {
+                width: 33.33333%;
+            }
+
+            .w3-col.l5 {
+                width: 41.66666%;
+            }
+
+            .w3-col.l6 {
+                width: 49.99999%;
+            }
+
+            .w3-col.l7 {
+                width: 58.33333%;
+            }
+
+            .w3-col.l8 {
+                width: 66.66666%;
+            }
+
+            .w3-col.l9 {
+                width: 74.99999%;
+            }
+
+            .w3-col.l10 {
+                width: 83.33333%;
+            }
+
+            .w3-col.l11 {
+                width: 91.66666%;
+            }
+
+            .w3-col.l12 {
+                width: 99.99999%;
+            }
+        }
+
+        .w3-rest {
+            overflow: hidden;
+        }
+
+        .w3-auto,
+        .w3-content {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .w3-content {
+            max-width: 980px;
+        }
+
+        .w3-auto {
+            max-width: 1140px;
+        }
+
+        .w3-cell-row {
+            display: table;
+            width: 100%;
+        }
+
+        .w3-cell {
+            display: table-cell;
+        }
+
+        .w3-cell-top {
+            vertical-align: top;
+        }
+
+        .w3-cell-middle {
+            vertical-align: middle;
+        }
+
+        .w3-cell-bottom {
+            vertical-align: bottom;
+        }
+
+        .w3-show {
+            display: block !important
+        }
+
+        .w3-hide {
+            display: none;
+        }
+
+        @media (max-width: 1205px) {
+            .w3-auto {
+                max-width: 95%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .w3-modal-content {
+                margin: 0 10px;
+                width: auto !important;
+            }
+
+            .w3-modal {
+                padding-top: 30px;
+            }
+
+            .w3-hide-small {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .w3-modal-content {
+                width: 500px;
+            }
+
+            .w3-modal {
+                padding-top: 50px;
+            }
+        }
+
+        @media (min-width: 993px) {
+            .w3-modal-content {
+                width: 600px;
+            }
+        }
+
+        @media (max-width: 992px) and (min-width: 601px) {
+            .w3-hide-medium {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .w3-auto {
+                max-width: 100%;
+            }
+        }
+
+        .w3-bottom,
+        .w3-top {
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .w3-top {
+            top: 0;
+        }
+
+        .w3-bottom {
+            bottom: 0;
+        }
+
+        .w3-display-topright {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .w3-display-middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        .w3-display-left {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+        }
+
+        .w3-display-right {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+        }
+
+        .w3-display-container:hover .w3-display-hover {
+            display: block;
+        }
+
+        .w3-display-container:hover span.w3-display-hover {
+            display: inline-block;
+        }
+
+        .w3-display-hover {
+            display: none;
+        }
+
+        .w3-round-small {
+            border-radius: 2px;
+        }
+
+        .w3-round,
+        .w3-round-medium {
+            border-radius: 4px;
+        }
+
+        .w3-round-xlarge {
+            border-radius: 16px;
+        }
+
+        .w3-row-padding,
+        .w3-row-padding>.w3-col {
+            padding: 0 8px;
+        }
+
+        .w3-container,
+        .w3-panel {
+            padding: 0.01em 16px;
+        }
+
+        .w3-panel {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .w3-code {
+            font-family: Consolas, "courier new";
+            font-size: 16px;
+        }
+
+        .w3-code {
+            width: auto;
+            background-color: #fff;
+            padding: 8px 12px;
+            border-left: 4px solid #4caf50;
+            word-wrap: break-word;
+        }
+
+        .w3-spin {
+            animation: w3-spin 2s infinite linear;
+        }
+
+        @keyframes w3-spin {
+            0% {
+                transform: rotate(0);
+            }
+
+            100% {
+                transform: rotate(359deg);
+            }
+        }
+
+        @keyframes fading {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes opac {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0;
+            }
+
+            to {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes animateleft {
+            from {
+                left: -300px;
+                opacity: 0;
+            }
+
+            to {
+                left: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes animateright {
+            from {
+                right: -300px;
+                opacity: 0;
+            }
+
+            to {
+                right: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -300px;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .w3-hover-opacity:hover,
+        .w3-opacity {
+            opacity: 0.6;
+        }
+
+        .w3-hover-opacity-off:hover,
+        .w3-opacity-off {
+            opacity: 1;
+        }
+
+        .w3-opacity-max {
+            opacity: 0.25;
+        }
+
+        .w3-opacity-min {
+            opacity: 0.75;
+        }
+
+        .w3-tiny {
+            font-size: 10px !important;
+        }
+
+        .w3-small {
+            font-size: 12px !important;
+        }
+
+        .w3-medium {
+            font-size: 15px !important;
+        }
+
+        .w3-xlarge {
+            font-size: 24px !important;
+        }
+
+        .w3-left-align {
+            text-align: left !important;
+        }
+
+        .w3-right-align {
+            text-align: right !important;
+        }
+
+        .w3-justify {
+            text-align: justify !important;
+        }
+
+        .w3-center {
+            text-align: center !important;
+        }
+
+        .w3-border-0 {
+            border: 0 !important;
+        }
+
+        .w3-border {
+            border: 1px solid #ccc !important;
+        }
+
+        .w3-border-top {
+            border-top: 1px solid #ccc !important;
+        }
+
+        .w3-border-bottom {
+            border-bottom: 1px solid #ccc !important;
+        }
+
+        .w3-border-left {
+            border-left: 1px solid #ccc !important;
+        }
+
+        .w3-border-right {
+            border-right: 1px solid #ccc !important;
+        }
+
+        .w3-code,
+        .w3-section {
+            margin-top: 16px !important;
+            margin-bottom: 16px !important;
+        }
+
+        .w3-margin {
+            margin: 16px !important;
+        }
+
+        .w3-margin-top {
+            margin-top: 16px !important;
+        }
+
+        .w3-margin-bottom {
+            margin-bottom: 16px !important;
+        }
+
+        .w3-margin-left {
+            margin-left: 16px !important;
+        }
+
+        .w3-margin-right {
+            margin-right: 16px !important;
+        }
+
+        .w3-padding-small {
+            padding: 4px 8px !important;
+        }
+
+        .w3-padding {
+            padding: 8px 16px !important;
+        }
+
+        .w3-padding-16 {
+            padding-top: 16px !important;
+            padding-bottom: 16px !important;
+        }
+
+        .w3-padding-24 {
+            padding-top: 24px !important;
+            padding-bottom: 24px !important;
+        }
+
+        .w3-padding-32 {
+            padding-top: 32px !important;
+            padding-bottom: 32px !important;
+        }
+
+        .w3-padding-48 {
+            padding-top: 48px !important;
+            padding-bottom: 48px !important;
+        }
+
+        .w3-padding-64 {
+            padding-top: 64px !important;
+            padding-bottom: 64px !important;
+        }
+
+        .w3-padding-top-64 {
+            padding-top: 64px !important;
+        }
+
+        .w3-padding-top-48 {
+            padding-top: 48px !important;
+        }
+
+        .w3-padding-top-32 {
+            padding-top: 32px !important;
+        }
+
+        .w3-padding-top-24 {
+            padding-top: 24px !important;
+        }
+
+        .w3-left {
+            float: left !important;
+        }
+
+        .w3-right {
+            float: right !important;
+        }
+
+        .w3-button:hover {
+            color: #000 !important;
+            background-color: #ccc !important;
+        }
+
+        .w3-hover-none:hover {
+            background-color: transparent !important;
+        }
+
+        .w3-hover-none:hover {
+            box-shadow: none !important;
+        }
+
+        .w3-amber,
+        .w3-hover-amber:hover {
+            color: #000 !important;
+            background-color: #ffc107 !important;
+        }
+
+        .w3-blue,
+        .w3-hover-blue:hover {
+            color: #fff !important;
+            background-color: #2196f3 !important;
+        }
+
+        .w3-grey,
+        .w3-hover-blue-grey:hover {
+            color: #fff !important;
+            background-color: #607d8b !important;
+        }
+
+        .w3-green,
+        .w3-hover-green:hover {
+            color: #fff !important;
+            background-color: #4caf50 !important;
+        }
+
+        .w3-hover-orange:hover,
+        .w3-orange {
+            color: #000 !important;
+            background-color: #ff9800 !important;
+        }
+
+        .w3-752bluedark {
+            color: #fff !important;
+            background-color: #065198 !important;
+        }
+
+        .w3-deep-orange,
+        .w3-hover-deep-orange:hover {
+            color: #fff !important;
+            background-color: #ff5722 !important;
+        }
+
+        .w3-hover-red:hover,
+        .w3-red {
+            color: #fff !important;
+            background-color: #f44336 !important;
+        }
+
+        .w3-hover-teal:hover,
+        .w3-teal {
+            color: #fff !important;
+            background-color: #009688 !important;
+        }
+
+        .w3-hover-yellow:hover,
+        .w3-yellow {
+            color: #000 !important;
+            background-color: #ffeb3b !important;
+        }
+
+        .w3-grey,
+        .w3-hover-grey:hover {
+            color: #000 !important;
+            background-color: #9e9e9e !important;
+        }
+
+        .w3-dark-grey,
+        .w3-hover-dark-grey:hover {
+            color: #fff !important;
+            background-color: #616161 !important;
+        }
+
+        .w3-hover-text-amber:hover,
+        .w3-text-amber {
+            color: #ffc107 !important;
+        }
+
+        .w3-hover-text-blue:hover,
+        .w3-text-blue {
+            color: #2196f3 !important;
+        }
+
+        .w3-hover-text-blue-grey:hover,
+        .w3-text-blue-grey {
+            color: #607d8b !important;
+        }
+
+        .w3-hover-text-green:hover,
+        .w3-text-green {
+            color: #4caf50 !important;
+        }
+
+        .w3-hover-text-orange:hover,
+        .w3-text-orange {
+            color: #ff9800 !important;
+        }
+
+        .w3-hover-text-deep-orange:hover,
+        .w3-text-deep-orange {
+            color: #ff5722 !important;
+        }
+
+        .w3-hover-text-red:hover,
+        .w3-text-red {
+            color: #f44336 !important;
+        }
+
+        .w3-hover-text-teal:hover,
+        .w3-text-teal {
+            color: #009688 !important;
+        }
+
+        .w3-hover-text-yellow:hover,
+        .w3-text-yellow {
+            color: #d2be0e !important;
+        }
+
+        .w3-hover-text-grey:hover,
+        .w3-text-grey {
+            color: #757575 !important;
+        }
+
+        .w3-hover-text-dark-grey:hover,
+        .w3-text-dark-grey {
+            color: #3a3a3a !important;
+        }
+
+        .w3-border-amber,
+        .w3-hover-border-amber:hover {
+            border-color: #ffc107 !important;
+        }
+
+        .w3-border-blue,
+        .w3-hover-border-blue:hover {
+            border-color: #2196f3 !important;
+        }
+
+        .w3-border-blue-grey,
+        .w3-hover-border-blue-grey:hover {
+            border-color: #607d8b !important;
+        }
+
+        .w3-border-green,
+        .w3-hover-border-green:hover {
+            border-color: #4caf50 !important;
+        }
+
+        .w3-border-orange,
+        .w3-hover-border-orange:hover {
+            border-color: #ff9800 !important;
+        }
+
+        .w3-border-deep-orange,
+        .w3-hover-border-deep-orange:hover {
+            border-color: #ff5722 !important;
+        }
+
+        .w3-border-red,
+        .w3-hover-border-red:hover {
+            border-color: #f44336 !important;
+        }
+
+        .w3-border-teal,
+        .w3-hover-border-teal:hover {
+            border-color: #009688 !important;
+        }
+
+        .w3-border-yellow,
+        .w3-hover-border-yellow:hover {
+            border-color: #ffeb3b !important;
+        }
+
+        .w3-border-grey,
+        .w3-hover-border-grey:hover {
+            border-color: #9e9e9e !important;
+        }
+
+        .w3-border-dark-grey,
+        .w3-hover-border-dark-grey:hover {
+            border-color: #616161 !important;
+        }
+
+        .brieftext {
+            font-size: 1.6vw;
+            font-weight: 700;
+            padding: 1px;
+            text-transform: uppercase;
+            color: #444;
+            min-height: 1vw;
+            word-wrap: break-word !important;
+        }
+
+        .brieflabel {
+            font-size: 1vw;
+            text-transform: uppercase;
+            color: #7a7a7a;
+        }
+
+        .w3-row.custom-flex {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .w3-row.custom-flex>.w3-container> {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .w3-row.custom-flex>.w3-container>.container> {
+            flex: 1;
+        }
+
+        [contenteditable="true"]:focus {
+            background-color: #fbfb98;
+        }
+
+        .h-hover:hover {
+            background-color: rgba(49, 196, 190, 0.75);
+            box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+        }
+
+        .loader {
+            --n: 5;
+            --s: 30px;
+            --g: 5px;
+            width: calc(var(--n) * (var(--s) + var(--g)) - var(--g));
+            height: 30px;
+            padding: var(--g);
+            margin: 5px auto;
+            border: 1px solid;
+            background: repeating-linear-gradient(90deg,
+                    currentColor 0 var(--s),
+                    #0000 0 calc(var(--s) + var(--g))) left/calc((var(--n) + 1) * (var(--s) + var(--g))) 100% no-repeat content-box;
+            animation: load 1.5s steps(calc(var(--n) + 1)) infinite;
+        }
+
+        @keyframes load {
+            0% {
+                background-size: 0 100%;
+            }
+        }
+
+        .h-result {
+            font-size: 0.8rem;
+            line-height: 0.8rem;
+            text-align: center;
+        }
+
+        .h-result span {
+            display: inline-block;
+            width: 75px;
+            text-align: left;
+        }
+
+        .h-result span:first-of-type {
+            text-align: right;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-spin {
+            -webkit-animation: fa-spin 2s infinite linear;
+            animation: fa-spin 2s infinite linear;
+        }
+
+        @-webkit-keyframes fa-spin {
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+
+            100% {
+                -webkit-transform: rotate(359deg);
+                transform: rotate(359deg);
+            }
+        }
+
+        @keyframes fa-spin {
+            0% {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+
+            100% {
+                -webkit-transform: rotate(359deg);
+                transform: rotate(359deg);
+            }
+        }
+
+        .result {
+            font-size: 10vw !important
+        }
+
+        .h-border {
+            border: 3px solid blue;
+        }
+
+        .h-marginb {
+            margin-bottom: 16px;
+        }
+
+        .w3-medium * {
+            font-size: 15px !important;
+        }
+
+        input,
+        select,
+        textarea {
+            color: #355a95;
+            font-weight: bolder;
+        }
+    </style>
+    <title>Mission Briefing</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-095ZMRTTEQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-095ZMRTTEQ');
+    </script>
+    <link rel="icon" type="image/png" href="https://www.emfa.pt/paginas/fap/ficheiros/heraldica/132681960210.png">
+</head>
+
+<body>
+    <div id="print">
+        <div class="w3-container w3-752bluedark w3-display-container">
+
+            <div class="w3-cell w3-cell-middle ">
+                <img onerror="this.style.display='none';" src="/E752%20Cores.png" alt="" style="height: 60px;">
+            </div>
+            <div class="w3-cell w3-padding">
+                <h1 style="font-size: xx-large;">752SQN - Mission Briefing</h1>
+            </div>
+            <div class="w3-container w3-hide-small w3-col  w3-right-align w3-display-right">
+                <h3 style="font-size: small;">
+                    <span class="" id="Clock">00:00:00</span><span id="time" class="logo"> | Thursday,
+                        17/February/2022</span>
+                </h3>
+                <div>
+                    City: <span id="city"></span><br>Sunrise: <span id="sunrise"></span> | Sunset: <span
+                        id="sunset"></span> | Moonrise: <span id="moonrise"></span> | Moonset: <span
+                        id="moonset"></span><span id="moonPhase"></span>
+                </div>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-margin-bottom w3-container brieflabel" style=" padding:8px;">
+            <div class="w3-col s4 m2 l2">
+                <input class="w3-check" id="Planodevoo" type="checkbox" name="planodevoo"
+                    onchange="if(this.checked)this.setAttribute('checked', 'on');else this.removeAttribute('checked')" />
+                <label for="Planodevoo">Flight Plan</label>
+            </div>
+            <div class="w3-col s4 m2 l2">
+                <input class="w3-check" id="autoCA" type="checkbox" name="autoCA"
+                    onchange="if(this.checked)this.setAttribute('checked', 'on');else this.removeAttribute('checked')" />
+                <label for="autoCA">Air Comm Clearance</label>
+            </div>
+            <div class="w3-col s4 m2 l2">
+                <input class="w3-check" id="AlertaAR" type="checkbox" name="AlertaAr"
+                    onchange="if(this.checked)this.setAttribute('checked', 'on');else this.removeAttribute('checked')" />
+                <label for="AlertaAR">Airborne SAR duty</label>
+            </div>
+            <div class="w3-col s4 m2 l2">
+                <input class="w3-check" id="GPStracker" type="checkbox" name="GPStracker"
+                    onchange="if(this.checked)this.setAttribute('checked', 'on');else this.removeAttribute('checked')" />
+                <label for="GPStracker">GPS Tracker</label>
+            </div>
+            <div class="w3-col s4 m2 l2">
+                <input class="w3-check" id="iPAD" type="checkbox" name="iPAD"
+                    onchange="if(this.checked)this.setAttribute('checked', 'on');else this.removeAttribute('checked')" />
+                <label for="iPAD">iPAD</label>
+            </div>
+            <div class="w3-col s4 m2 l2">
+                <input class="w3-check" id="BPAX" type="checkbox" name="BPAX"
+                    onchange="if(this.checked)this.setAttribute('checked', 'on');else this.removeAttribute('checked')" />
+                <label for="BPAX">Briefing PAX</label>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-margin-bottom">
+            <div class="w3-col s4 m2 l2">
+                <input id="callsign" class="w3-input brieftext" type="text"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">CallSign</label>
+            </div>
+            <div class="w3-col s3 m3 l2">
+                <input id="airtask" class="w3-input brieftext" type="text"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">AIRTASK</label>
+            </div>
+            <div class="w3-col s3 m2 l2">
+                <input id="modtype" class="w3-input brieftext" type="text"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">MOD/TYPE</label>
+            </div>
+            <div class="w3-col s2 m1 l1">
+                <input id="dep" class="w3-input brieftext" type="text" onblur="delay()"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">DEPARTURE</label>
+            </div>
+            <div class="w3-col s2 m2 l2">
+                <input id="tgt" class="w3-input brieftext" type="text" onblur="delay()"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">TARGET</label>
+            </div>
+            <div class="w3-col s2 m1 l1">
+                <input id="arr" class="w3-input brieftext" type="text" onblur="delay()"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">ARRIVAL</label>
+            </div>
+
+            <div class="w3-col s2 m2 l2">
+                <input id="Dia" class="w3-input brieftext" type="date"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">DATE</label>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-margin-bottom">
+
+            <div class="w3-col s3 m3 l1">
+                <input id="iff" class="w3-input brieftext" type="text"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">IFF CODE</label>
+            </div>
+            <div class="w3-col s3 m2 l2">
+                <input id="etd" class="w3-input brieftext" type="time"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">ETD</label>
+            </div>
+            <div class="w3-col s3 m2 l2">
+                <input id="ETA" class="w3-input brieftext" type="time"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">ETA</label>
+            </div>
+            <div class="w3-col s3 m2 l1">
+                <input id="ete" class="w3-input brieftext" type="time"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">ETE</label>
+            </div>
+            <div class="w3-col s2 m2 l1">
+                <input id="tail" class="w3-input brieftext" type="text"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">AIRCRAFT</label>
+            </div>
+            <div class="w3-col s2 m2 l1">
+                <input id="fuel" class="w3-input brieftext" type="text"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">FUEL</label>
+            </div>
+            <div class="w3-col s2 m1 l1">
+                <input id="cargo" class="w3-input brieftext" type="text"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">Cargo</label>
+            </div>
+            <div class="w3-col s1 m1 l1">
+                <input id="orm" class="w3-input brieftext" type="text" onclick="orm()" value="CALC">
+                <label class="brieflabel">ORM</label>
+            </div>
+            <div class="w3-col s1 m1 l1">
+                <input id="pax" class="w3-input brieftext" type="text"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">PAX</label>
+            </div>
+            <div class="w3-col s1 m1 l1">
+                <input id="DOE" class="w3-input brieftext" type="text"
+                    onchange="this.setAttribute('value', this.value)">
+                <label class="brieflabel">DOE</label>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-margin-bottom">
+            <div class="w3-col s6 m6 l6 w3-cell-bottom">
+                <div id="observations1" class="w3-input w3-center brieftext" type="text" contenteditable="" true></div>
+                <div id="observations2" class="w3-input w3-center brieftext" type="text" contenteditable="" true></div>
+                <label class="brieflabel">REMARKS</label>
+            </div>
+            <div class="w3-col s6 m6 l6">
+                <div id="comms" class="w3-input brieftext" type="text" contenteditable="" true>
+                    <table class="w3-table-all w3-striped w3-border w3-centered" contenteditable="" true>
+                        <tr class="w3-752bluedark">
+                            <th></th>
+                            <th>V/UHF#1</th>
+                            <th>V/UHF#2</th>
+                            <th>V/UHF#3</th>
+                            <th>HF</th>
+                        </tr>
+                        <tr>
+                            <th class="w3-752bluedark">PRI</th>
+                            <td>ATC</td>
+                            <td>OPSBA4V</td>
+                            <td>CH11</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th class="w3-752bluedark">SEC</th>
+                            <td>ATC</td>
+                            <td>OPSBA4U</td>
+                            <td>CH06</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                </div>
+                <label class="brieflabel">Communication plan</label>
+            </div>
+        </div>
+
+    </div>
+    <div class="w3-container w3-margin-bottom w3-responsive">
+        <table class="w3-table-all w3-centered" id="tripulantes">
+            <thead></thead>
+            <tbody>
+                <tr class="w3-752bluedark" id="tituloqualf" contenteditable="">
+                    <th>PIF</th>
+                    <th>NAME</th>
+                    <th id="qualificacao1" data-balloon-pos="up"></th>
+                    <th id="qualificacao2" data-balloon-pos="up"></th>
+                    <th id="qualificacao3" data-balloon-pos="up"></th>
+                    <th id="qualificacao4" data-balloon-pos="up"></th>
+                    <th id="qualificacao5" data-balloon-pos="up"></th>
+                    <th id="qualificacao6" data-balloon-pos="up"></th>
+                    <th id="qualificacao7" data-balloon-pos="up"></th>
+                    <th id="qualificacao8" data-balloon-pos="up"></th>
+                    <th id="qualificacao9" data-balloon-pos="up"></th>
+                    <th id="qualificacao10" data-balloon-pos="up"></th>
+                    <th id="FCB">FCB</th>
+                    <th colspan=3 id="Supervision">SUPERV.</th>
+                    <th>
+                        <button class="add">+</button>
+                    </th>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew11"></td>
+                    <td id="crew12"></td>
+                    <td id="crew13"></td>
+                    <td id="crew14"></td>
+                    <td id="crew15"></td>
+                    <td id="crew16"></td>
+                    <td id="crew17"></td>
+                    <td id="crew18"></td>
+                    <td id="crew19"></td>
+                    <td id="crew110"></td>
+                    <td id="crew111"></td>
+                    <td id="crew112"></td>
+                    <td id="crew113"></td>
+                    <td id="crew114"></td>
+                    <td id="crew115"></td>
+                    <td id="crew116"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew21"></td>
+                    <td id="crew22"></td>
+                    <td id="crew23"></td>
+                    <td id="crew24"></td>
+                    <td id="crew25"></td>
+                    <td id="crew26"></td>
+                    <td id="crew27"></td>
+                    <td id="crew28"></td>
+                    <td id="crew29"></td>
+                    <td id="crew210"></td>
+                    <td id="crew211"></td>
+                    <td id="crew212"></td>
+                    <td id="crew213"></td>
+                    <td id="crew214"></td>
+                    <td id="crew215"></td>
+                    <td id="crew216"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew31"></td>
+                    <td id="crew32"></td>
+                    <td id="crew33"></td>
+                    <td id="crew34"></td>
+                    <td id="crew35"></td>
+                    <td id="crew36"></td>
+                    <td id="crew37"></td>
+                    <td id="crew38"></td>
+                    <td id="crew39"></td>
+                    <td id="crew310"></td>
+                    <td id="crew311"></td>
+                    <td id="crew312"></td>
+                    <td id="crew313"></td>
+                    <td id="crew314"></td>
+                    <td id="crew315"></td>
+                    <td id="crew316"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew41"></td>
+                    <td id="crew42"></td>
+                    <td id="crew43"></td>
+                    <td id="crew44"></td>
+                    <td id="crew45"></td>
+                    <td id="crew46"></td>
+                    <td id="crew47"></td>
+                    <td id="crew48"></td>
+                    <td id="crew49"></td>
+                    <td id="crew410"></td>
+                    <td id="crew411"></td>
+                    <td id="crew412"></td>
+                    <td id="crew413"></td>
+                    <td id="crew414"></td>
+                    <td id="crew415"></td>
+                    <td id="crew416"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew51"></td>
+                    <td id="crew52"></td>
+                    <td id="crew53"></td>
+                    <td id="crew54"></td>
+                    <td id="crew55"></td>
+                    <td id="crew56"></td>
+                    <td id="crew57"></td>
+                    <td id="crew58"></td>
+                    <td id="crew59"></td>
+                    <td id="crew510"></td>
+                    <td id="crew511"></td>
+                    <td id="crew512"></td>
+                    <td id="crew513"></td>
+                    <td id="crew514"></td>
+                    <td id="crew515"></td>
+                    <td id="crew516"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew61"></td>
+                    <td id="crew62"></td>
+                    <td id="crew63"></td>
+                    <td id="crew64"></td>
+                    <td id="crew65"></td>
+                    <td id="crew66"></td>
+                    <td id="crew67"></td>
+                    <td id="crew68"></td>
+                    <td id="crew69"></td>
+                    <td id="crew610"></td>
+                    <td id="crew611"></td>
+                    <td id="crew612"></td>
+                    <td id="crew613"></td>
+                    <td id="crew614"></td>
+                    <td id="crew615"></td>
+                    <td id="crew616"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew71"></td>
+                    <td id="crew72"></td>
+                    <td id="crew73"></td>
+                    <td id="crew74"></td>
+                    <td id="crew75"></td>
+                    <td id="crew76"></td>
+                    <td id="crew77"></td>
+                    <td id="crew78"></td>
+                    <td id="crew79"></td>
+                    <td id="crew710"></td>
+                    <td id="crew711"></td>
+                    <td id="crew712"></td>
+                    <td id="crew713"></td>
+                    <td id="crew714"></td>
+                    <td id="crew715"></td>
+                    <td id="crew716"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew81"></td>
+                    <td id="crew82"></td>
+                    <td id="crew83"></td>
+                    <td id="crew84"></td>
+                    <td id="crew85"></td>
+                    <td id="crew86"></td>
+                    <td id="crew87"></td>
+                    <td id="crew88"></td>
+                    <td id="crew89"></td>
+                    <td id="crew810"></td>
+                    <td id="crew811"></td>
+                    <td id="crew812"></td>
+                    <td id="crew813"></td>
+                    <td id="crew814"></td>
+                    <td id="crew815"></td>
+                    <td id="crew816"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew91"></td>
+                    <td id="crew92"></td>
+                    <td id="crew93"></td>
+                    <td id="crew94"></td>
+                    <td id="crew95"></td>
+                    <td id="crew96"></td>
+                    <td id="crew97"></td>
+                    <td id="crew98"></td>
+                    <td id="crew99"></td>
+                    <td id="crew910"></td>
+                    <td id="crew911"></td>
+                    <td id="crew912"></td>
+                    <td id="crew913"></td>
+                    <td id="crew914"></td>
+                    <td id="crew915"></td>
+                    <td id="crew916"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+                <tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true">
+                    <td id="crew101"></td>
+                    <td id="crew102"></td>
+                    <td id="crew103"></td>
+                    <td id="crew104"></td>
+                    <td id="crew105"></td>
+                    <td id="crew106"></td>
+                    <td id="crew107"></td>
+                    <td id="crew108"></td>
+                    <td id="crew109"></td>
+                    <td id="crew1010"></td>
+                    <td id="crew1011"></td>
+                    <td id="crew1012"></td>
+                    <td id="crew1013"></td>
+                    <td id="crew1014"></td>
+                    <td id="crew1015"></td>
+                    <td id="crew1016"></td>
+                    <td class="w3-cell-row" style="width: 1%;">
+                        <div class="w3-cell save h-hover " style="display: none; padding: 5px;"
+                            onclick="saveLinha(this)">💾</div>
+                        <div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div>
+                        <div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="w3-container w3-margin-bottom w3-responsive">
+        <table class="w3-table-all w3-centered" id="profile">
+            <thead></thead>
+            <tbody>
+                <tr class="w3-752bluedark" contenteditable="">
+                    <th style="width: 1%; font-size: large;">Vessel</th>
+                    <th style="width: 1%;font-size: large;">Cliff</th>
+                    <th style="width: 1%;font-size: large;">Floater</th>
+                </tr>
+                <tr contenteditable="">
+                    <td> Acompanhamento<br />Peso<br />Homem Simples<br />HI-LINE<br />Homem -
+                        Maca<br /></td>
+                    <td>Cabo estendido</td>
+                    <td> TD1<br />TD2<br />Largar boia 100'<br />Circuito<br />Colocação
+                        Dummy<br />Circuito<br />Recuperação Maca<br />Circuito<br />Recuperação
+                        dupla</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="geradorQR">
+        <!-- The Modal -->
+        <div id="modal" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container w3-center"><span
+                        onclick="document.getElementById('modal').style.display='none'"
+                        class="w3-button w3-display-topright">x</span>
+                    <div id="loader" class="loader" style="COLOR: #444; border-radius: 50px; --s: 25px; --g: 8px"></div>
+                    <div id="erro" class="w3-modal-content" style="DISPLAY: none">Não foi possivel enviar com sucesso.
+                        <p>Erro: <span id="errodesc"></span></p>
+                    </div>
+                    <div id="qr" style="DISPLAY: none; flex-direction: column; justify-content: center">
+                        <p>Scan QR Code or click link!</p><a id="link" class="w3-blue w3-container w3-padding"
+                            href="http://htput.com/eh101">http://htput.com/eh101</a> <canvas id="qrcode"
+                            style="MARGIN: 15px; DISPLAY: flex; justify-content: center"></canvas>
+                    </div>
+                    <div id="offline" style="DISPLAY: none">Erro: Está Offline.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w3-bar w3-margin-top w3-padding w3-752bluedark w3-container" style="font-size: x-small;">
+        <span class="w3-bar-item w3-margin-right">Esquadra 752 - Megamind 2023</span>
+        <button class="w3-bar-item w3-hover-blue w3-button w3-right  w3-blue" id="download" onclick="download(this)"
+            href="#" download="Briefing missão.html">💾 Save</button>
+        <button onclick="senduppy()"
+            class="w3-button  w3-margin-right  w3-right w3-hover-red w3-bar-item   w3-yellow"><i class="fa fa-spin"
+                id="loadup" style="display:none">🌍</i>Upload and
+            get QR Code ?</button>
+
+    </div>
+    <div id="ormwindow" class="w3-modal">
+        <div class="w3-modal-content" id="printOrm" style="width:97%; max-width: 1000px;">
+            <div class="w3-container">
+                <span id="closemodal" onclick="ormFormClose()"
+                    class="w3-button w3-display-topright w3-deep-orange">&times;</span>
+                <div class="w3-container w3-margin-top">
+                    <form autocomplete="off" onreset="setTimeout(function(){
+showFields()                    }, 50);" class="" id="ormForm" method="POST" data-email="example@email.net"
+                        action="https://script.google.com/macros/s/AKfycbxUmu8rjQpKsbcZm2J-0BZycC7xzKB_vv06oI_c1KvNpt__l5eGDtQcuJBbL29qMhrXXg/exec">
+                        <div class="w3-panel w3-container w3-blue" style="margin-bottom: 0;">
+                            <h3>Mission Data</h3>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class=" w3-col s12 m4 l3 h-marginb">
+                                <input required class="w3-input" id="airtaskf" type="text" name="airtask"
+                                    style="text-transform:uppercase;" onchange="this.value = this.value.toUpperCase()">
+                                <label for="airtask">Airtask</label>
+                            </div>
+                            <div class=" w3-col s6 m4 l3 h-marginb">
+                                <input type="text" list="Airdrome" onchange="this.value = this.value.toUpperCase()"
+                                    name="departureAirdrome" id="departureAirdrome" required class="w3-input" />
+                                <datalist id="Airdrome">
+                                    <option>LPMT</option>
+                                    <option>LPLA</option>
+                                    <option>LPPS</option>
+                                </datalist>
+                                <label>Departure Location</label>
+                            </div>
+                            <div class=" w3-col s6 m4 l3 h-marginb">
+                                <input required class="w3-input" type="date" name="flightDate" id="datef">
+                                <label>Mission Date</label>
+                            </div>
+
+                            <div class=" w3-col s6 m4 l3 h-marginb">
+                                <input required class="w3-input" type="time" name="ETD" step="300" id="etdf">
+                                <label>ETD (ZULU)</label>
+                            </div>
+                        </div>
+                        <div class="w3-row-padding">
+                            <div class=" w3-col s12 m3 l3">
+                                <input required class="w3-input" id="callsignOrm" type="text" name="callsign"
+                                    style="text-transform:uppercase;" onchange="this.value = this.value.toUpperCase()">
+                                <label for="callsign">Callsign</label>
+                            </div>
+                            <div class=" w3-col s12 m3 l3">
+                                <select required class="w3-select" name="aircraft" id="aircraft">
+                                    <option value="" selected>Choose</option>
+                                    <option value="Not Defined">Not Defined</option>
+                                    <option value="Multiple">Formation</option>
+                                    <option value="T/N 19601">19601</option>
+                                    <option value="T/N 19602">19602</option>
+                                    <option value="T/N 19603">19603</option>
+                                    <option value="T/N 19604">19604</option>
+                                    <option value="T/N 19605">19605</option>
+                                    <option value="T/N 19606">19606</option>
+                                    <option value="T/N 19607">19607</option>
+                                    <option value="T/N 19608">19608</option>
+                                    <option value="T/N 19609">19609</option>
+                                    <option value="T/N 19610">19610</option>
+                                    <option value="T/N 19611">19611</option>
+                                    <option value="T/N 19612">19612</option>
+                                </select>
+                                <label for="aircraft">Aircraft</label>
+                            </div>
+                            <div class=" w3-col s6 m3 l3">
+                                <select required class="w3-select" name="mod" id="mod" onchange=" showFields()">
+                                    <option value="" selected>Choose</option>
+                                    <option value="ADEM">ADEM</option>
+                                    <option value="ADROP">ADROP</option>
+                                    <option value="AIREV">AIREV</option>
+                                    <option value="ALSO">ALSO</option>
+                                    <option value="AMOV">AMOV</option>
+                                    <option value="AQUAL">AQUAL</option>
+                                    <option value="CSAR">CSAR</option>
+                                    <option value="INTRAAT">INTRAAT</option>
+                                    <option value="ISR">ISR</option>
+                                    <option value="MNT">MNT</option>
+                                    <option value="RAT">RAT</option>
+                                    <option value="SAO">SAO</option>
+                                    <option value="SAR">SAR</option>
+                                    <option value="SMOV">SMOV</option>
+                                    <option value="VIPLF">VIPLF</option>
+                                    <option value="VIS">VIS</option>
+                                </select><label for="MOD">MOD</label>
+                            </div>
+                            <div class=" w3-col s6 m3 l3">
+                                <select required class="w3-select" name="type" id="type" onchange=" showFields()">
+                                    <option value="" selected>Choose</option>
+                                    <option value="TRM">TRM</option>
+                                    <option value="TRU">TRU</option>
+                                    <option value="TRQ">TRQ</option>
+                                    <option value="OPER">OPER</option>
+                                </select> <label for="type">TYPE</label>
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-yellow w3-padding"><span style="font-size:30px">❓</span><span>ASSESS
+                                RISK CRITERIA CONSIDERING WORST CASE BETWEEN DEPARTURE, ROUTE, AREA OF OPERATION,
+                                ARRIVAL AND ALTERNATE</span></div>
+                        <div class="w3-panel w3-container w3-blue" style="margin-bottom: 0;">
+                            <h3>Enviromental Factors<span class="w3-tooltip"> ? <span
+                                        class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">Wind
+                                        at typical civilian locations:<br>
+
+                                        <span id="metarORM"></span></span></span></h3>
+                        </div>
+                        <div class="w3-row-padding w3-border">
+                            <div class="w3-col s12 m8 l8">
+                                <div class="w3-col s12 m6 l6">
+                                    <h3>Ceiling/Visibilty <span class="w3-tooltip"> ? <span
+                                                class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">This
+                                                could be used to give information on the factor!</span></span>
+                                    </h3>
+                                    <p></p>
+                                    <input class="w3-radio" type="checkbox" name="ceiling" id="ceiling1"
+                                        onclick="getSelectItemThat(this.id, this.name, this.checked)" value="4">
+                                    <label class="w3-yellow"> 699-300 ft/3,69-1,6 km
+                                    </label>
+                                    <br>
+                                    <input class="w3-radio" type="checkbox" name="ceiling" id="ceiling2"
+                                        onclick="getSelectItemThat(this.id, this.name, this.checked)" value="6">
+                                    <label class="w3-amber"> 299-200 ft/1,59-0,8 km
+                                    </label>
+                                    <br>
+                                    <input class="w3-radio" type="checkbox" name="ceiling" id="ceiling3"
+                                        onclick="getSelectItemThat(this.id, this.name, this.checked)" value="10">
+                                    <label class="w3-red"> &#60;200ft/&#60;0,8 km
+                                    </label>
+                                </div>
+                                <div class="w3-col s12 m6 l6">
+                                    <h3>Wind</h3>
+                                    <p>
+                                        <input id="wind" class="w3-check" type="checkbox" name="wind" value="4">
+                                        <label for="wind">Wind &#62;40 kts</label>
+                                    </p>
+                                </div>
+                                <div class="w3-col s12 m6 l6">
+                                    <h3>Clouds<span class="w3-tooltip"> ? <span
+                                                class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">This
+                                                could be used to give information on the factor!</span></span></h3>
+                                    <p>
+                                        <input id="Clouds" class="w3-check" type="checkbox" name="clouds" value="5">
+                                        <label for="Clouds">TS or CB present or forcasted</label>
+                                    </p>
+                                </div>
+                                <div class="w3-col s12 m6 l6">
+                                    <h3>Fire Fighting<span class="w3-tooltip"> ? <span
+                                                class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">This
+                                                could be used to give information on the factor!</span></span></h3>
+                                    <p>
+                                        <input id="firefighting" class="w3-check" type="checkbox" name="firefighting"
+                                            value="4">
+                                        <label for="firefighting">Firefighting cat &#60;H2 (CAT4) </label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w3-col s12 m4 l4">
+                                <h3>Outside Air Temperature<span class="w3-tooltip"> ? <span
+                                            class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">Temperature
+                                            values can be obtained from METARS</span></span></h3>
+                                <p>
+                                    <label for="oat">Outside temperature (°C): </label><input onchange="stress()"
+                                        id="oat" class="w3-check" type="number" min="-40" max="55" name="oat" value=""
+                                        style="Width: 8ch;">
+                                    <br>
+                                    <label for="dewPoint">Dew Point (°C): </label> <input onchange="stress()"
+                                        id="dewPoint" class="w3-check" type="number" min="-40" max="55" name="dewPoint"
+                                        value="" style="Width: 8ch;">
+                                    <br>
+                                    <br> <label>Relative Humidity: <b><span id="humidity"></span></b> % </label>
+                                    <br>
+
+                                <table class="tg w3-tiny w3-center" width=100% id="stress">
+                                    <thead>
+                                        <tr>
+                                            <th class="w3-grey" rowspan="2">OAT<br>(°C)<br></th>
+
+                                            <th class="w3-grey" colspan="8">Relative Humidity (%)<br></th>
+                                        </tr>
+                                        <tr>
+                                            <th class="w3-grey">10</th>
+                                            <th class="w3-grey">20</th>
+                                            <th class="w3-grey">30</th>
+                                            <th class="w3-grey">40</th>
+                                            <th class="w3-grey">50</th>
+                                            <th class="w3-grey">60</th>
+                                            <th class="w3-grey">70</th>
+                                            <th class="w3-grey">80</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="w3-grey">21</td>
+
+                                            <td class="w3-green">19</td>
+                                            <td class="w3-green">20</td>
+                                            <td class="w3-green">22</td>
+                                            <td class="w3-green">23</td>
+                                            <td class="w3-green">24</td>
+                                            <td class="w3-green">26</td>
+                                            <td class="w3-green">27</td>
+                                            <td class="w3-green">28</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">24</td>
+                                            <td class="w3-green">22</td>
+                                            <td class="w3-green">23</td>
+                                            <td class="w3-green">25</td>
+                                            <td class="w3-green">26</td>
+                                            <td class="w3-green">28</td>
+                                            <td class="w3-green">29</td>
+                                            <td class="w3-green">30</td>
+                                            <td class="w3-green">31</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">27</td>
+                                            <td class="w3-green">24</td>
+                                            <td class="w3-green">26</td>
+                                            <td class="w3-green">27</td>
+                                            <td class="w3-green">29</td>
+                                            <td class="w3-green">31</td>
+                                            <td class="w3-green">32</td>
+                                            <td class="w3-yellow">32</td>
+                                            <td class="w3-yellow">32</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">30</td>
+                                            <td class="w3-green">26</td>
+                                            <td class="w3-green">28</td>
+                                            <td class="w3-green">30</td>
+                                            <td class="w3-green">32</td>
+                                            <td class="w3-yellow">33</td>
+                                            <td class="w3-yellow">35</td>
+                                            <td class="w3-yellow">36</td>
+                                            <td class="w3-yellow">37</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">32</td>
+                                            <td class="w3-green">28</td>
+                                            <td class="w3-green">31</td>
+                                            <td class="w3-green">33</td>
+                                            <td class="w3-yellow">34</td>
+                                            <td class="w3-yellow">36</td>
+                                            <td class="w3-yellow">38</td>
+                                            <td class="w3-red">39</td>
+                                            <td class="w3-red">41</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">35</td>
+                                            <td class="w3-green">31</td>
+                                            <td class="w3-yellow">33</td>
+                                            <td class="w3-yellow">36</td>
+                                            <td class="w3-yellow">37</td>
+                                            <td class="w3-red">39</td>
+                                            <td class="w3-red">41</td>
+                                            <td class="w3-red">42</td>
+                                            <td class="w3-red">44</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">38</td>
+
+                                            <td class="w3-yellow">33</td>
+                                            <td class="w3-yellow">36</td>
+                                            <td class="w3-yellow">38</td>
+                                            <td class="w3-red">40</td>
+                                            <td class="w3-red">42</td>
+                                            <td class="w3-red">44</td>
+                                            <td class="w3-red">46</td>
+                                            <td class="w3-red">47</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">40</td>
+                                            <td class="w3-yellow">35</td>
+                                            <td class="w3-yellow">38</td>
+                                            <td class="w3-red">41</td>
+                                            <td class="w3-red">43</td>
+                                            <td class="w3-red">45</td>
+                                            <td class="w3-red">47</td>
+                                            <td class="w3-red">49</td>
+                                            <td class="w3-red">50</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">43</td>
+                                            <td class="w3-yellow">37</td>
+                                            <td class="w3-red">41</td>
+                                            <td class="w3-red">43</td>
+                                            <td class="w3-red">46</td>
+                                            <td class="w3-red">48</td>
+                                            <td class="w3-red">50</td>
+                                            <td class="w3-red">52</td>
+                                            <td class="w3-red">53</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">46</td>
+
+                                            <td class="w3-red">39</td>
+                                            <td class="w3-red">43</td>
+                                            <td class="w3-red">46</td>
+                                            <td class="w3-red">48</td>
+                                            <td class="w3-red">51</td>
+                                            <td class="w3-red">53</td>
+                                            <td class="w3-red">54</td>
+                                            <td class="w3-red">57</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w3-grey">49</td>
+                                            <td class="w3-red">42</td>
+                                            <td class="w3-red">46</td>
+                                            <td class="w3-red">48</td>
+                                            <td class="w3-red">51</td>
+                                            <td class="w3-red">54</td>
+                                            <td class="w3-red">56</td>
+                                            <td class="w3-red">58</td>
+                                            <td class="w3-red">60</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br> <label>Thermal Stress to ORM: <b><span id="thermalStress"></span></b>
+                                </label><input name="thermalStress" value="" type="hidden" id="thermalValue"> </p>
+                            </div>
+
+                        </div>
+                        <div class="w3-panel w3-container w3-blue" style="margin-bottom: 0;">
+                            <h3>Daily Period?<span class="w3-tooltip"> ? <span
+                                        class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">This
+                                        could be used to give information on the factor!</span></span></h3>
+                        </div>
+                        <div class="w3-border w3-row">
+                            <div class="w3-row-padding ">
+                                <div class="w3-col">
+                                    <p>
+                                        <input required class="w3-radio" type="radio" name="night" value="0" id="day"
+                                            onclick=" showNight()">
+                                        <label for="day"> Day
+                                        </label>&nbsp;
+                                        <input class="w3-radio" type="radio" name="night" id="night" value="6"
+                                            onclick=" showNight()">
+                                        <label for="night"> Night
+                                        </label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding resethide" id="nightFactors" style="display:none">
+                                <div class="  w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                    <h3>Critical Period</h3>
+                                    <p>
+                                        <input id="criticalNight" class="w3-check" type="checkbox" name="criticalNight"
+                                            value="3">
+                                        <label for="criticalNight">23H00 and 07H00 (Local)</label>
+                                    </p>
+                                </div>
+                                <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                    <h3>NVG</h3>
+                                    <p>
+                                        <input class="w3-check" type="checkbox" name="nvg" id="nvg1"
+                                            onclick="getSelectItemThat(this.id, this.name, this.checked)" value="4">
+                                        <label class="w3-yellow"> Non qualified Crew
+                                        </label>
+                                        <br>
+                                        <input class="w3-check" type="checkbox" name="nvg" id="nvg2"
+                                            onclick="getSelectItemThat(this.id, this.name, this.checked)" value="6">
+                                        <label class="w3-red"> Not avaiable
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                    <h3>Iluminance</h3>
+                                    <p>
+                                        <input id="criticalLight" class="w3-check" type="checkbox" name="iluminance"
+                                            value="4">
+                                        <label for="criticalLight"> &#60; 5 mlux</label>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-container w3-blue" style="margin-bottom: 0;">
+                            <h3>Over Water?<span class="w3-tooltip"> ? <span
+                                        class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">>25%
+                                        mission time</span></span></h3>
+                        </div>
+                        <div class="w3-border w3-row">
+                            <div class="w3-row-padding">
+                                <div class="w3-col">
+                                    <p>
+                                        <input required class="w3-radio" type="radio" name="sea" value="4"
+                                            id="overWater" value="6" onclick=" showSea()">
+                                        <label for="overWater"> Yes
+                                        </label>&nbsp;
+                                        <input class="w3-radio" type="radio" name="sea" id="notWater" value="0"
+                                            onclick=" showSea()">
+                                        <label for="notWater"> No
+                                        </label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding resethide " id="seaFactors" style="display:none">
+                                <div class="w3-col s12 m3 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+ ">
+                                    <h3>Wave</h3>
+                                    <p>
+                                        <input class="w3-check " type="checkbox" name="wave" id="wave1"
+                                            onclick="getSelectItemThat(this.id, this.name, this.checked)" value="6">
+                                        <label class="w3-yellow"> &#8805; 4 m
+                                        </label>
+                                        <br>
+                                        <input class="w3-check " type="checkbox" name="wave" id="wave2"
+                                            onclick="getSelectItemThat(this.id, this.name, this.checked)" value="8"
+                                            onclick=" showSea()">
+                                        <label class="w3-red"> &#8805; 6 m
+                                        </label>
+                                        <br>
+                                        <br>
+
+                                    </p>
+                                </div>
+                                <div class="w3-col s12 m5 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+ ">
+                                    <h3>SAR rescue response<span class="w3-tooltip"> ? <span
+                                                class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">1-check
+                                                estimated time for rescue from nearest EH101 available at furthest route
+                                                point.<br>
+                                                2-check water temperature;<br>
+                                                3-check survival matrix.</span></span></h3>
+                                    <p>
+                                        <input id="survivalTime" class="w3-check" type="checkbox" name="rescueResponde"
+                                            value="15">
+                                        <label for="survivalTime"> Response time &#62; Survival time</label>
+                                    </p>
+                                </div>
+                                <div style="display:none"
+                                    class="w3-col s12 m4 l4 sartru sartrm saroper sartrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq saotru saotrm saooper saotrq">
+                                    <h3>Vessel Size</h3>
+                                    <p>
+                                        <input id="vessel" class="w3-check" type="checkbox" name="vessel" value="10">
+                                        <label for="vessel"> &#60; 20 meters</label>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-container w3-blue" style="margin-bottom: 0;">
+                            <h3>Mission Factors</h3>
+                        </div>
+                        <div class="w3-border w3-row-padding" id="mission">
+                            <div class="w3-col s12 m4 l4 alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq"
+                                style="display:none">
+                                <h3>Operational Enviroment</h3>
+                                <p>
+                                    <input class="w3-check" type="checkbox" name="operationalEnviroment" id=""
+                                        value="15">
+                                    <label class="w3-red"> Semi-permissive
+                                    </label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq 
+                                ">
+                                <h3>COMAO</h3>
+                                <p>
+                                    <input id="comao" class="w3-check" type="checkbox" name="comao" value="8">
+                                    <label for="comao">more than 5 aircraft</label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                <h3>Operations Area</h3>
+                                <p>
+                                    <input id="opsArea" class="w3-check" type="checkbox" name="opsArea" value="4">
+                                    <label for="opsArea">Unfamiliar</label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                <h3>Airspace</h3>
+                                <p>
+                                    <input id="airspace" class="w3-check" type="checkbox" name="airspace" value="2">
+                                    <label for="airspace">Uncontroled</label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq 
+                                ">
+                                <h3>Procedure</h3>
+                                <p>
+                                    <input id="procedure" class="w3-check" type="checkbox" name="procedureSOPs"
+                                        value="6">
+                                    <label for="procedureSOPs">Not defined in SOPs</label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                <h3>Experience on Mission</h3>
+                                <p>
+                                    <input id="unexperiencedCrew" class="w3-check" type="checkbox"
+                                        name="unexperiencedCrew" value="4">
+                                    <label for="unexperiencedCrew"> Crew experience &#60;50FH </label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq"
+                                style="display:none">
+                                <h3>Comms Coverage</h3>
+                                <p>
+                                    <input class="w3-check" type="checkbox" name="commsCover" id="comms1"
+                                        onclick="getSelectItemThat(this.id, this.name, this.checked)" value="4">
+                                    <label class="w3-yellow"> Medium
+                                    </label><span class="w3-tooltip"> ? <span
+                                            class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">Estimated
+                                            coverage >50% and &#60;=90% mission time.</span></span>
+                                    <br>
+                                    <input class=" w3-check" type="checkbox" name="commsCover" id="comms2"
+                                        onclick="getSelectItemThat(this.id, this.name, this.checked)" value="6">
+                                    <label class="w3-red"> Low
+                                    </label><span class="w3-tooltip"> ? <span
+                                            class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">Estimated
+                                            coverage &#60;=50% mission time</span></span>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <h3>Performance Class</h3>
+                                <p>
+                                    <input id="performanceClass" class="w3-check" type="checkbox"
+                                        name="performanceClass" value="10">
+                                    <label for="performanceClass"> Performance Class 2 </label><span class="w3-tooltip">
+                                        ? <span
+                                            class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">Use
+                                            this criteria for operations where performance dictate that in the event of
+                                            engine failure you will not be able to fly with at least 35ft above
+                                            obstacles and proceeding for landing will exceed the structural limits.
+                                            <br>
+                                            Example:
+                                            <br>
+                                            -Vessel operations with high TRQ Hover;
+                                            <br>
+                                            -Sling load operations;
+                                            <br>
+                                            -Hover at high altitudes.</span></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w3-border  w3-row-padding" id="missionParameters" style="padding-bottom:16px;">
+                            <h3 id="missParaTitle" style="display:none">Mission Specials</h3>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq
+                                ">
+                                <input id="hoistOperations" class="w3-check" type="checkbox" name="hoistOperations"
+                                    value="6">
+                                <label for="hoistOperations">Hoist Operations</label>
+                            </div>
+                            <div class="w3-col s12 m4 l4 sartru sartrm saroper sartrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq
+                                ">
+                                <input id="hoverCloseToMovingObstacles" class="w3-check" type="checkbox"
+                                    name="hoverCloseToMovingObstacles" value="8">
+                                <label for="hoverCloseToMovingObstacles">Hover close to moving obstacles
+                                </label>
+                            </div>
+                            <div class="w3-col s12 m4 l4 ademtru ademtrm ademoper ademtrq saotru saotrm saooper saotrq
+                                ">
+                                <input id="10feetHoverOperations" class="w3-check" type="checkbox"
+                                    name="10feetHoverOperations" value="10">
+                                <label for="10feetHoverOperations">10' hover operations</label>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq vistru vistrm visoper vistrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <input id="terrainFlightLow" class="w3-check" type="checkbox" name="terrainFlightLow"
+                                    value="8">
+                                <label for="terrainFlightLow">terrain flight &lt; 200 feet
+                                </label>
+                            </div>
+                            <div class="w3-col s12 m4 l4 mnttru mnttrm mntoper mnttrq
+                            ">
+                                <input id="testFlight" class="w3-check" type="checkbox" name="testFlight" value="4">
+                                <label for="testFlight">Functional Check Flight</label>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq
+                            ">
+                                <input id="simulatedEmergencies" class="w3-check" type="checkbox"
+                                    name="simulatedEmergencies" value="4">
+                                <label for="simulatedEmergencies">Simulated Emergencies</label>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <input id="dustLanding" class="w3-check" type="checkbox" name="dustLanding" value="10">
+                                <label for="dustLanding">Dust Landing</label>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <input id="unpreparedLandingSites" class="w3-check" type="checkbox"
+                                    name="unpreparedLandingSites" value="6">
+                                <label for="unpreparedLandingSites">Unprepared Land Sites</label>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <input id="mountainFlight" class="w3-check" type="checkbox" name="mountainFlight"
+                                    value="8">
+                                <label for="mountainFlight">Mountain Flight</label><span class="w3-tooltip"> ? <span
+                                        class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">-flying
+                                        and operatin in terrain with changes in elevation that exceed 990 metres within
+                                        a distance of 10nm.</span></span>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <input id="formationFlight" class="w3-check" type="checkbox" name="formationFlight"
+                                    value="6">
+                                <label for="formationFlight">Formation Flight</label>
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-container w3-blue" style="margin-bottom: 0;">
+                            <h3>Human Factors</h3>
+                        </div>
+                        <div class="w3-border w3-row-padding" id="humanFactor">
+                            <div class="w3-col s12 m4 l4 aqualtru  sartru  alsotru  intraattru saotru  csartru ">
+                                <p>
+                                    <input id="uniqualifiedCrew" class="w3-check" type="checkbox"
+                                        name="uniqualifiedCrew" value="6">
+                                    <label for="uniqualifiedCrew"> Crew Member Requalification </label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                <p>
+                                    <input id="ShortNoticePlan" class="w3-check" type="checkbox" name="ShortNoticePlan"
+                                        value="6">
+                                    <label for="ShortNoticePlan"> Planning/replanning time &#60;1 hour </label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                <p>
+                                    <input id="estimatedFlightDuty>10" class="w3-check" type="checkbox"
+                                        name="estimatedFlightDuty>10" value="6">
+                                    <label for="estimatedFlightDuty>10"> Estimated flight duty time &#62;10 hours
+                                    </label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq
+                                ">
+                                <p>
+                                    <input id="Proficiency" class="w3-check" type="checkbox" name="Proficiency"
+                                        value="3">
+                                    <label for="Proficiency"> Proficiency Level &#60;1 </label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w3-border  w3-row-padding" id="sliders" style="padding-bottom:16px;">
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                <p> <label for="fatigue"> Fatigue (<b><span id="tired">0</span></b>) &#9; </label><span
+                                        class="w3-tooltip"> ? <span
+                                            class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">Factors:<br>
+                                            ->5 flights on last 7 days;<br>
+                                            -quality rest last 3 days;
+                                            -others.</span></span><br>
+                                    <input style="width:100%" type="text" min="0" max="15" value="0" class="slider"
+                                        name="fatigue" id="fatigue"
+                                        oninput="document.getElementById('tired').innerHTML = this.value;">
+                                    <label for="fatigueDescription"> Reason (short description): </label> <textarea
+                                        style="width:100%" name="fatigueDescription" rows="3"
+                                        id="fatigueDescription"></textarea>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                                ">
+                                <p> <label for="personalFactors"> Personal Factors (<b><span id="personal">0</span></b>)
+                                        &#9; </label><span class="w3-tooltip"> ? <span
+                                            class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">-Personal/family
+                                            stress (health, financial, relationship, etc…)<br>
+                                            -Professional stress (unmotivated, conflicts, etc…)<br>
+                                            -Pressure assigned to the mission (internal and external)</span></span><br>
+                                    <input style="width:100%" type="range" min="0" max="15" value="0" class="slider"
+                                        name="personalFactors" id="personalFactors"
+                                        oninput="document.getElementById('personal').innerHTML = this.value;">
+                                    <label for="personalFactDescription"> Reason (short description): </label> <textarea
+                                        style="width:100%" name="personalFactDescription" rows="3"
+                                        id="personalFactDescription"></textarea>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <p> <label for="picExtra"> PIC Assessment (<b><span id="pic">0</span></b>)
+                                        &#9; </label><br>
+                                    <input style="width:100%" type="range" min="0" max="15" value="0" class="slider"
+                                        name="picExtra" id="picExtra"
+                                        oninput="document.getElementById('pic').innerHTML = this.value;">
+                                    <label for="picDescription"> Reason (short description): </label> <textarea
+                                        style="width:100%" name="picDescription" rows="3"
+                                        id="picDescription"></textarea>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-container w3-blue" style="margin-bottom: 0;">
+                            <h3>Waivers</h3>
+                        </div>
+                        <div class="w3-border w3-row-padding" id="waivers" style="padding-bottom:16px">
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <p>
+                                    <input id="flightDuty>14H" class="w3-check" type="checkbox" name="flightDuty>14H"
+                                        value="60">
+                                    <label for="flightDuty>14H"> Estimated flight duty &#62;14H </label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <p>
+                                    <input id="crewFlyingLimit" class="w3-check" type="checkbox" name="crewFlyingLimit"
+                                        value="60">
+                                    <label for="crewFlyingLimit"> Crew Fliying Hours Limit </label><span
+                                        class="w3-tooltip"> ? <span
+                                            class="w3-text w3-border w3-small w3-container w3-margin-right w3-round-xlarge">Weekly/Monthly
+                                            Limit</span></span>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 aqualtru aqualtrm aqualoper aqualtrq sartru sartrm saroper sartrq airevtru airevtrm airevoper airevtrq mnttru mnttrm mntoper mnttrq smovtru smovtrm smovoper smovtrq amovtru amovtrm amovoper amovtrq rattru rattrm ratoper rattrq vistru vistrm visoper vistrq viplftru viplftrm viplfoper viplftrq ademtru ademtrm ademoper ademtrq alsotru alsotrm alsooper alsotrq intraattru intraattrm intraatoper intraattrq isrtru isrtrm isroper isrtrq saotru saotrm saooper saotrq csartru csartrm csaroper csartrq adroptru adroptrm adropoper adroptrq
+                            ">
+                                <p>
+                                    <input id="crewRestReduced" class="w3-check" type="checkbox" name="crewRestReduced"
+                                        value="60">
+                                    <label for="crewRestReduced"> Crew Rest Reduced </label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 sartru sartrm saroper sartrq
+                            ">
+                                <p>
+                                    <input id="noSarSupport" class="w3-check" type="checkbox" name="noSarSupport"
+                                        value="60">
+                                    <label for="noSarSupport"> No SAR Support &#62; 120Nm </label>
+                                </p>
+                            </div>
+                            <div class="w3-col s12 m4 l4 mntoper">
+                                <p>
+                                    <input id="mntFerryFlight" class="w3-check" type="checkbox" name="mntFerryFlight"
+                                        value="60">
+                                    <label for="mntFerryFlight"> Maintenance Ferry Flight </label>
+                                </p>
+                            </div>
+                        </div>
+                        <fieldset class="pure-group honeypot-field" style="display:none">
+                            <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text
+                                field; must be
+                                empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+                            <input id="honeypot" type="text" name="honeypot" value="" />
+                        </fieldset>
+                        <input id="total" type="number" Value="" name="total" style="display:none">
+                        <p>
+                            <button class="w3-button w3-section w3-blue w3-ripple" type="submit" id="sendButton"><i
+                                    class="fa fa-spin" id="loadicon" style="display:none">↻</i> Send
+                                To Database
+                            </button>
+                            <button class="w3-button w3-section w3-red w3-ripple" type="reset"
+                                onclick="x=confirm_reset();setTimeout(showFields, 1000); return x">
+                                Reset </button>
+                            <button class="w3-button w3-section w3-grey w3-ripple" id="formCloseButton" type="button"
+                                onclick="ormFormClose()">
+                                Close </button>
+                        <div id="sucess" class="w3-modal">
+                            <div class="w3-modal-content">
+                                <div class="w3-container">
+                                    <span onclick="document.getElementById('sucess').style.display='none'"
+                                        class="w3-button w3-display-topright">&times;</span>
+                                    <p>Sent to E751_ORM_database</p>
+                                    <p>Thank You!</p>
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </form>
+                </div>
+                <div class="w3-container ">
+                    <table class="w3-table w3-table-all w3-centered ">
+                        <thead>
+                            <tr>
+                                <th>RESULT</th>
+                                <th>ORM Summary</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th class="w3-green result" id="result1">
+                                0
+                            </th>
+                            <td>
+                                <div class="w3-tiny" id="summary" style="line-height:normal !important"></div>
+                            </td>
+                        </tr>
+                    </table>
+                    <p></p>
+                    <table class="w3-table w3-table-all w3-centered w3-medium ">
+                        <thead>
+                            <tr>
+                                <th>ORM Value</th>
+                                <th>Approval Autorithy</th>
+                            </tr>
+                        </thead>
+                        <tr class="w3-green">
+                            <td>&#60;40</td>
+                            <td>AIRCRAFT COMMANDER (PIC)</td>
+                        </tr>
+                        <tr class="w3-yellow">
+                            <td>≤40 to &#60;50
+                            </td>
+                            <td>SQUADRON COMMANDER (SC)
+                            </td>
+                        </tr>
+                        <tr class="w3-orange">
+                            <td>≤50 to &#60;60</td>
+                            <td>OPERATIONS GROUP COMMANDER (OGC)
+                            </td>
+                        </tr>
+                        <tr class="w3-red">
+                            <td>≤60
+                            </td>
+                            <td>AIR COMMANDER (AC)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //makes ENTER key behave like TAB key
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
+                var form = event.target.form;
+                var index = Array.prototype.indexOf.call(form, event.target);
+                var nextIndex = index + 1;
+                while (form.elements[nextIndex] && (form.elements[nextIndex].nodeName !== 'INPUT' || form.elements[nextIndex].offsetParent === null || form.elements[nextIndex].offsetHeight === 0)) {
+                    nextIndex++;
+                }
+                if (form.elements[nextIndex]) {
+                    form.elements[nextIndex].focus();
+                } else {
+                    form.elements[0].focus();
+                }
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.9.0/suncalc.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script type="module" src="https://releases.transloadit.com/uppy/v3.3.1/uppy.min.js"></script>
+
+    <script type="text/javascript">
+        !(function (a, b) {
+            "function" == typeof define && define.amd
+                ? define(b)
+                : "object" == typeof exports
+                    ? (module.exports = b())
+                    : (a.VMasker = b());
+        })(this, function () {
+            var a = "9",
+                b = "A",
+                c = "S",
+                d = [9, 16, 17, 18, 36, 37, 38, 39, 40, 91, 92, 93],
+                e = function (a) {
+                    for (var b = 0, c = d.length; b < c; b++) if (a == d[b]) return !1;
+                    return !0;
+                },
+                f = function (a) {
+                    return (
+                        (a = a || {}),
+                        (a = {
+                            precision: a.hasOwnProperty("precision") ? a.precision : 2,
+                            separator: a.separator || ",",
+                            delimiter: a.delimiter || ".",
+                            unit: (a.unit && a.unit.replace(/[\s]/g, "") + " ") || "",
+                            suffixUnit:
+                                (a.suffixUnit && " " + a.suffixUnit.replace(/[\s]/g, "")) || "",
+                            zeroCents: a.zeroCents,
+                            lastOutput: a.lastOutput,
+                        }),
+                        (a.moneyPrecision = a.zeroCents ? 0 : a.precision),
+                        a
+                    );
+                },
+                g = function (d, e, f) {
+                    for (; e < d.length; e++)
+                        (d[e] !== a && d[e] !== b && d[e] !== c) || (d[e] = f);
+                    return d;
+                },
+                h = function (a) {
+                    this.elements = a;
+                };
+            (h.prototype.unbindElementToMask = function () {
+                for (var a = 0, b = this.elements.length; a < b; a++)
+                    (this.elements[a].lastOutput = ""),
+                        (this.elements[a].onkeyup = !1),
+                        (this.elements[a].onkeydown = !1),
+                        this.elements[a].value.length &&
+                        (this.elements[a].value = this.elements[a].value.replace(/\D/g, ""));
+            }),
+                (h.prototype.bindElementToMask = function (a) {
+                    for (
+                        var b = this,
+                        c = function (c) {
+                            c = c || window.event;
+                            var d = c.target || c.srcElement;
+                            e(c.keyCode) &&
+                                setTimeout(function () {
+                                    (b.opts.lastOutput = d.lastOutput),
+                                        (d.value = i[a](d.value, b.opts)),
+                                        (d.lastOutput = d.value),
+                                        d.setSelectionRange &&
+                                        b.opts.suffixUnit &&
+                                        d.setSelectionRange(
+                                            d.value.length,
+                                            d.value.length - b.opts.suffixUnit.length
+                                        );
+                                }, 0);
+                        },
+                        d = 0,
+                        f = this.elements.length;
+                        d < f;
+                        d++
+                    )
+                        (this.elements[d].lastOutput = ""),
+                            (this.elements[d].onkeyup = c),
+                            this.elements[d].value.length &&
+                            (this.elements[d].value = i[a](this.elements[d].value, this.opts));
+                }),
+                (h.prototype.maskMoney = function (a) {
+                    (this.opts = f(a)), this.bindElementToMask("toMoney");
+                }),
+                (h.prototype.maskNumber = function () {
+                    (this.opts = {}), this.bindElementToMask("toNumber");
+                }),
+                (h.prototype.maskAlphaNum = function () {
+                    (this.opts = {}), this.bindElementToMask("toAlphaNumeric");
+                }),
+                (h.prototype.maskPattern = function (a) {
+                    (this.opts = { pattern: a }), this.bindElementToMask("toPattern");
+                }),
+                (h.prototype.unMask = function () {
+                    this.unbindElementToMask();
+                });
+            var i = function (a) {
+                if (!a) throw new Error("VanillaMasker: There is no element to bind.");
+                var b = "length" in a ? (a.length ? a : []) : [a];
+                return new h(b);
+            };
+            return (
+                (i.toMoney = function (a, b) {
+                    if (((b = f(b)), b.zeroCents)) {
+                        b.lastOutput = b.lastOutput || "";
+                        var c = "(" + b.separator + "[0]{0," + b.precision + "})",
+                            d = new RegExp(c, "g"),
+                            e = a.toString().replace(/[\D]/g, "").length || 0,
+                            g = b.lastOutput.toString().replace(/[\D]/g, "").length || 0;
+                        (a = a.toString().replace(d, "")),
+                            e < g && (a = a.slice(0, a.length - 1));
+                    }
+                    var h = a.toString().replace(/[\D]/g, ""),
+                        i = new RegExp("^(0|\\" + b.delimiter + ")"),
+                        j = new RegExp("(\\" + b.separator + ")$"),
+                        k = h.substr(0, h.length - b.moneyPrecision),
+                        l = k.substr(0, k.length % 3),
+                        m = new Array(b.precision + 1).join("0");
+                    k = k.substr(k.length % 3, k.length);
+                    for (var n = 0, o = k.length; n < o; n++)
+                        n % 3 === 0 && (l += b.delimiter), (l += k[n]);
+                    if (((l = l.replace(i, "")), (l = l.length ? l : "0"), !b.zeroCents)) {
+                        var p = h.length - b.precision,
+                            q = h.substr(p, b.precision),
+                            r = q.length,
+                            s = b.precision > r ? b.precision : r;
+                        m = (m + q).slice(-s);
+                    }
+                    var t = b.unit + l + b.separator + m + b.suffixUnit;
+                    return t.replace(j, "");
+                }),
+                (i.toPattern = function (d, e) {
+                    var f,
+                        h = "object" == typeof e ? e.pattern : e,
+                        i = h.replace(/\W/g, ""),
+                        j = h.split(""),
+                        k = d.toString().replace(/\W/g, ""),
+                        l = k.replace(/\W/g, ""),
+                        m = 0,
+                        n = j.length,
+                        o = "object" == typeof e ? e.placeholder : void 0;
+                    for (f = 0; f < n; f++) {
+                        if (m >= k.length) {
+                            if (i.length == l.length) return j.join("");
+                            if (void 0 !== o && i.length > l.length) return g(j, f, o).join("");
+                            break;
+                        }
+                        if (
+                            (j[f] === a && k[m].match(/[0-9]/)) ||
+                            (j[f] === b && k[m].match(/[a-zA-Z]/)) ||
+                            (j[f] === c && k[m].match(/[0-9a-zA-Z]/))
+                        )
+                            j[f] = k[m++];
+                        else if (j[f] === a || j[f] === b || j[f] === c)
+                            return void 0 !== o ? g(j, f, o).join("") : j.slice(0, f).join("");
+                    }
+                    return j.join("").substr(0, f);
+                }),
+                (i.toNumber = function (a) {
+                    return a.toString().replace(/(?!^-)[^0-9]/g, "");
+                }),
+                (i.toAlphaNumeric = function (a) {
+                    return a.toString().replace(/[^a-z0-9 ]+/i, "");
+                }),
+                i
+            );
+        });
+
+    </script>
+    <script type="text/javascript">
+        var Elem = document.getElementById("Clock");
+        VMasker(document.querySelector("#airtask")).maskPattern("99A 9999");
+        VMasker(document.querySelector("#airtaskf")).maskPattern("99A 9999");
+
+        // Retrieve the current date and time
+        function getCurrentDateTime() {
+            const now = new Date();
+            const mName = now.getMonth();
+            const dName = now.getDay();
+            const dayNr = now.getDate();
+            const yearNr = now.getYear();
+
+            const days = [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Beerday ?? ",
+                "Saturday",
+            ];
+            const day = days[dName];
+
+            const months = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ];
+            const month = months[mName];
+
+            let year;
+            if (yearNr < 2000) {
+                year = 1900 + yearNr;
+            } else {
+                year = yearNr;
+            }
+
+            const date = `${day}, ${dayNr}/${month}/${year}`;
+            const time = `${pad(now.getUTCHours(), 2)}:${pad(now.getMinutes(), 2)}:${pad(
+                now.getSeconds(),
+                2
+            )} UTC`;
+
+            return { date, time };
+        }
+
+        // Update the "Clock" and "time" elements with the current date and time
+        function updateDateTimeElements() {
+            const { date, time } = getCurrentDateTime();
+            document.getElementById("Clock").innerHTML = time;
+            document.getElementById("time").innerHTML = ` —  ${date}`;
+        }
+
+        // Initialize the date and time elements
+        updateDateTimeElements();
+
+        // Update the date and time elements every 1000 milliseconds (1 second)
+        window.setInterval(updateDateTimeElements, 1000);
+        console.log("costa");
+        /* funcção para retirar dados do url.*/
+        window.onload = parse_query_string();
+        function parse_query_string() {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            console.log(vars);
+            console.log("helder");
+            var query_string = {};
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                var key = decodeURIComponent(pair[0]);
+                var value = decodeURIComponent(pair[1]);
+                if (key.includes("color")) {
+                    key = key.replace("color", "");
+                    document.getElementById(key).style.background = value;
+                } else {
+                    if (key.includes("checked")) {
+                        key = key.replace("checked", "");
+                        document.getElementById(key).checked = true;
+                    } else {
+                        if (key.includes("font")) {
+                            key = key.replace("font", "");
+                            document.getElementById(key).style.color = value;
+                        } else {
+                            try {
+                                document.getElementById(key).innerHTML = value;
+
+                            } catch (e) { }
+                            try {
+                                document.getElementById(key).setAttribute('value', value)
+
+                            } catch (e) { }
+                        }
+                    }
+                }
+            }
+        }
+        //----- fim ----
+        function siblings(n, elem) {
+            var matched = [];
+            for (; n; n = n.previousSibling) {
+                if (n.nodeType === 1 && n !== elem) {
+                    matched.push(n);
+                }
+            }
+            return matched;
+        }
+        function editLinha(a) {
+            b = a.parentElement;
+            linha = siblings(b);
+            for (let i = 1; i < linha.length; i++) {
+                texto = linha[i].innerText;
+                linha[
+                    i
+                ].innerHTML = `<input style="width:100%;" type="text" value="${texto}" />`;
+            }
+            b.querySelector(".save").style.display = "";
+            b.querySelector(".delete").style.display = "none";
+            a.style.display = "none";
+        }
+        function saveLinha(a) {
+            b = a.parentElement.parentElement;
+            linha = siblings(b);
+            inputs = b.querySelectorAll("td input");
+            for (let i = 0; i < inputs.length; i++) {
+                texto = inputs[i].value;
+                inputs[i].parentElement.innerHTML = texto;
+            }
+            b.querySelector(".edit").style.display = "";
+            b.querySelector(".delete").style.display = "";
+            a.style.display = "none";
+        }
+        function deleteLinha(a) {
+            var result = confirm("Confirma que pretende apagar a linha?");
+            if (result) {
+                // Delete logic goes here
+                a.closest("tr").remove();
+            }
+        }
+        document.querySelector(".add").addEventListener("click", function () {
+            this.closest("table").insertAdjacentHTML(
+                "beforeend",
+                '<tr ondragstart="dragit(event)" ondragover="dragover(event)" draggable="true"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="w3-cell-row" style="width: 1%;"><div class="w3-cell save h-hover " style="display: none; padding: 5px;" onclick="saveLinha(this)">💾</div><div class="w3-cell edit h-hover" style=" padding: 5px;" onclick="editLinha(this)">✏️</div><div class="w3-cell h-hover delete" style=" padding: 5px;" onclick="deleteLinha(this)">❌</div></td></tr>'
+            );
+        });
+
+        /*script para apagar linhas em branco*/
+        document
+            .getElementById("tripulantes")
+            .querySelectorAll("tr")
+            .forEach((a) => {
+                let count = 0;
+                b = a.querySelectorAll("td");
+                for (let i = 0; i < b.length; i++) {
+                    if (b[i].innerText == "") count++;
+                }
+                if (count == 16) a.closest("tr").remove();
+            });
+
+        //ajustar colunas
+        var coluna = document.getElementById("tituloqualf").getElementsByTagName("th");
+        var i;
+        for (i = 2; i < coluna.length - 2; ++i) {
+            if (coluna[i].innerText) {
+                coluna[i].setAttribute("width", "10%");
+            }
+        }
+        //cores das qualificações
+        var celula = document.getElementById("tripulantes").getElementsByTagName("td");
+        var i;
+        for (i = 0; i < celula.length; ++i) {
+            switch (celula[i].style.backgroundColor) {
+                case "yellow":
+                    celula[i].style.backgroundColor = "#fbfb98";
+                    celula[i].style.color = "black";
+                    break;
+                case "red":
+                    celula[i].style.backgroundColor = "#fb9898";
+                    celula[i].style.color = "black";
+                    break;
+                case "rgb(51, 204, 52)":
+                    celula[i].style.backgroundColor = "#98fb98";
+                    celula[i].style.color = "black";
+                    break;
+                default:
+                    break;
+            }
+        }
+        //acordion
+        function accordion(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        function download(a) {
+            console.log(a);
+            dia = document.getElementById("Dia").value;
+            callsign = document.getElementById("callsign").value;
+            var nome = "";
+            if (dia) nome = nome + dia + "_";
+            if (callsign) nome = nome + callsign + "_";
+            nome = nome.toUpperCase() + "briefing_missão.html";
+            const myFile = new File([document.documentElement.outerHTML], nome);
+            downloadFile(myFile);
+        }
+
+        function downloadFile(file) {
+            // Create a link and set the URL using `createObjectURL`
+            const link = document.createElement("a");
+            link.style.display = "none";
+            link.href = URL.createObjectURL(file);
+            link.download = file.name;
+
+            // It needs to be added to the DOM so it can be clicked
+            document.body.appendChild(link);
+            link.click();
+
+            // To make this work on Firefox we need to wait
+            // a little while before removing it.
+            setTimeout(() => {
+                URL.revokeObjectURL(link.href);
+                link.parentNode.removeChild(link);
+            }, 0);
+        }
+
+        window.addEventListener("offline", (event) => {
+            const offline = document.getElementById("offline");
+            console.log("está offline");
+            offline.style.display = "block";
+        });
+        window.addEventListener("online", (event) => {
+            const offline = document.getElementById("offline");
+            offline.style.display = "none";
+        });
+
+        async function getMetar(icaoCode) {
+            // Set the API endpoint URL
+            const apiKey = "46a83b62d2a4b0d68f0be4a494126b1d";
+            const url = `https://cors-anywhere.herokuapp.com/http://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=24&mostRecent=true&stationString=${icaoCode}`;
+
+            // Send the request to the API endpoint
+            const response = await fetch(url);
+            const data = await response.text();
+            // Print the raw METAR data
+
+            var x2js = new X2JS();
+            var jsonObj = x2js.xml_str2json(data);
+            console.log(jsonObj.response.data.METAR);
+            document.getElementById("oat").value = Math.round(
+                jsonObj.response.data.METAR.temp_c
+            );
+            document.getElementById("dewPoint").value = Math.round(
+                jsonObj.response.data.METAR.dewpoint_c
+            );
+            stress();
+        }
+
+        function orm() {
+            document.getElementById("formCloseButton").setAttribute("type", "button")
+            display("ormwindow").display = "block";
+
+            const formElements = [
+                { src: "airtask", dest: "airtaskf" },
+                { src: "callsign", dest: "callsignOrm" },
+                { src: "Dia", dest: "datef" },
+                { src: "etd", dest: "etdf" },
+                { src: "dep", dest: "departureAirdrome" },
+            ];
+
+            formElements.forEach((element) => {
+                document.getElementById(element.dest).value = document
+                    .getElementById(element.src)
+                    .value.toUpperCase();
+            });
+
+            document.getElementById("aircraft").value =
+                "T/N " + document.getElementById("tail").value;
+            modtype = document.getElementById("modtype").value.toUpperCase().split("/");
+            if (modtype[1]) {
+                document.getElementById("mod").value = modtype[0];
+                document.getElementById("type").value = modtype[1];
+            }
+            populateForm();
+            showFields();
+            const depicao = document.getElementById("departureAirdrome").value;
+            console.log(depicao);
+            getMetar(depicao);
+        }
+
+        function ormFormClose() {
+            saveForm();
+            display("ormwindow").display = "none";
+            x = document.getElementById("result1").innerText.trim();
+            gro = document.getElementById("orm");
+            gro.value = x;
+            gro.className =
+                x < 40
+                    ? "w3-input brieftext"
+                    : x < 50
+                        ? "w3-input brieftext w3-yellow"
+                        : x < 60
+                            ? "w3-input brieftext w3-752bluedark"
+                            : "w3-input brieftext w3-red";
+        }
+
+        function senduppy() {
+            (display("modal").display = "block"),
+                (display("loader").display = "block"),
+                (display("qr").display = "none"),
+                (dia = document.getElementById("Dia").value),
+                (callsign = document.getElementById("callsign").value),
+                (fileName = dia + "_"
+                    + callsign + "_briefing_missão.html");
+            display("modal").display = "none"
+            var e = document.cloneNode(!0)
+            display("modal").display = "block"
+            var t = e.getElementsByTagName("html")[0].innerHTML
+
+            var n = new Blob([t], { type: "text/html;charset=utf-8" }),
+                o =
+                    (new File([n], "foo.html", { type: "text/html;charset=utf-8" }),
+                        new Uppy.Uppy({ debug: !0, autoProceed: !0 }));
+            o.addFile({
+                name: fileName,
+                type: "text/html;charset=utf-8",
+                data: n,
+                meta: {},
+                source: "Local",
+                isRemote: !1,
+            }),
+                o.use(Uppy.Tus, { endpoint: "https://tusd.tusdemo.net/files/" }),
+                o.upload().then((t) => {
+                    console.info("Successful uploads:", t.successful),
+                        (url = t.successful[0].uploadURL),
+                        (display("loader").display = "none"),
+                        (display("qr").display = "flex"),
+                        (document.getElementById("link").innerText = "Link briefing"),
+                        (document.getElementById("link").href = url);
+                    var n = e.getElementById("geradorQR");
+                    n.parentNode.removeChild(n),
+                        (display("modal").display = "block"),
+                        new QRious({
+                            element: document.getElementById("qrcode"),
+                            value: url,
+                            size: 250,
+                        }),
+                        t.failed.length > 0 &&
+                        (console.error("Errors:"),
+                            t.failed.forEach((e) => {
+                                console.error(e.error);
+                            }));
+                }),
+          telegram(fileName);
+        }
+
+        
+        function display(a, b) {
+            return document.getElementById(a).style;
+        }
+
+        //função para arrnjar os dados do sun e moon
+        navigator.geolocation.getCurrentPosition((position) => {
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
+
+            var times = SunCalc.getTimes(new Date(), lat, long);
+
+            document.getElementById("sunrise").innerText =
+                pad(times.sunrise.getHours(), 2) + ":" + pad(times.sunrise.getMinutes(), 2);
+            document.getElementById("sunset").innerText =
+                pad(times.sunset.getHours(), 2) + ":" + pad(times.sunset.getMinutes(), 2);
+
+            const today = new Date();
+            let tomorrow = new Date();
+            tomorrow.setDate(today.getDate() + 1);
+            var moontimes = SunCalc.getMoonTimes(today, lat, long);
+
+            var moontimesnextday = SunCalc.getMoonTimes(tomorrow, lat, long);
+            if (moontimes.rise) {
+                document.getElementById("moonrise").innerText =
+                    pad(moontimes.rise.getHours(), 2) +
+                    ":" +
+                    pad(moontimes.rise.getMinutes(), 2);
+            } else {
+                document.getElementById("moonrise").innerText =
+                    pad(moontimesnextday.rise.getHours(), 2) +
+                    ":" +
+                    pad(moontimesnextday.rise.getMinutes(), 2) +
+                    " +1";
+            }
+            if (moontimes.set) {
+                document.getElementById("moonset").innerText =
+                    pad(moontimes.set.getHours(), 2) +
+                    ":" +
+                    pad(moontimes.set.getMinutes(), 2);
+            } else {
+                document.getElementById("moonset").innerText =
+                    pad(moontimesnextday.set.getHours(), 2) +
+                    ":" +
+                    pad(moontimesnextday.set.getMinutes() + " +1", 2);
+            }
+            let moonphase = SunCalc.getMoonIllumination(today);
+
+            document.getElementById("moonPhase").innerText =
+                " | Phase: " + moonphase.fraction.toFixed(2) + "/1";
+            cityName(lat, long);
+        });
+
+        //função para arranjar o nome da cidade mais próxima das coordenadas
+        function cityName(lat, long) {
+            var result = document.getElementById("city");
+            var bdcApi = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+            bdcApi =
+                bdcApi + "?latitude=" + lat + "&longitude=" + long + "&localityLanguage=en";
+
+            getApi(bdcApi)
+                .then((data) => {
+                    // handle success
+                    result.innerHTML = data.city;
+                })
+                .catch((error) => {
+                    // handle error
+                });
+        }
+
+        async function getApi(bdcApi) {
+            return new Promise((resolve, reject) => {
+                const Http = new XMLHttpRequest();
+                Http.open("GET", bdcApi);
+                Http.send();
+                Http.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            resolve(JSON.parse(this.responseText));
+                        } else {
+                            reject(new Error(`Request failed: ${this.status}`));
+                        }
+                    }
+                };
+            });
+        }
+
+        //função para por zeros à esquerda
+        function pad(num, size) {
+            num = num.toString();
+            while (num.length < size) num = "0" + num;
+            return num;
+        }
+
+        //função para limpar as checkboxes com o mesmo name se clicar noutra
+        function getSelectItemThat(id, name, checked) {
+            if (checked) {
+                document.getElementsByName(name).forEach((a) => {
+                    a.checked = false;
+                });
+                document.getElementById(id).checked = true;
+            } else {
+                document.getElementsByName(name).forEach((a) => {
+                    a.checked = false;
+                });
+            }
+        }
+
+        //isto serve para definir os inputs como range porque o excell vba não mantinha a formatação se fosse inline
+        document.getElementById("fatigue").type = "range";
+        document.getElementById("personalFactors").type = "range";
+        document.getElementById("picExtra").type = "range";
+
+        //busca as ondas para dar info no ORM
+
+
+
+    </script>
+    <script type="text/javascript">
+
+        var form = document.getElementById("ormForm");
+        form.addEventListener("change", function () {
+            getValues();
+        });
+        function showNight() {
+            // Get the checkbox
+            const checkBox = document.getElementById("night");
+            // Get the output text
+            const text = document.getElementById("nightFactors");
+            // If the checkbox is checked, display the output text
+            if (checkBox.checked) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+                for (el of text.getElementsByTagName("input")) {
+                    el.checked = false;
+                    el.required = false;
+                }
+            }
+        }
+        function showSea() {
+            // Get the checkbox
+            const checkBox = document.getElementById("overWater");
+            // Get the output text
+            const text = document.getElementById("seaFactors");
+            // If the checkbox is checked, display the output text
+            if (checkBox.checked) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+                for (el of text.getElementsByTagName("input")) {
+                    el.required = false;
+                    el.checked = false;
+                }
+            }
+        }
+
+        function getValues() {
+            let total = 0;
+            document.getElementById("total").value = 0;
+            let myForm = document.getElementById("ormForm");
+            let formData = new FormData(myForm);
+            console.log(formData);
+            for (var value of formData.values()) {
+                if (!isNaN(value) && value != "") total += parseInt(value);
+            }
+            text = "";
+            total =
+                total -
+                document.getElementById("oat").value -
+                document.getElementById("dewPoint").value;
+            a = document.getElementById("fatigueDescription").value;
+            if (!isNaN(a)) total -= a;
+            a = document.getElementById("personalFactDescription").value;
+            if (!isNaN(a)) total -= a;
+            a = document.getElementById("picDescription").value;
+            if (!isNaN(a)) total -= a;
+
+            document.getElementById("total").value = total;
+            formData = new FormData(myForm);
+            for (var pair of formData.entries()) {
+                text = text + "<br>" + pair[0] + ": " + pair[1];
+            }
+            document.getElementById("result1").innerText = total;
+            const x = total;
+            let result = document.getElementById("result1").className;
+            switch (true) {
+                case x < 40:
+                    document.getElementById("result1").className = "w3-green result";
+                    console.log("verde");
+                    break;
+                case x < 50:
+                    document.getElementById("result1").className = "w3-yellow result";
+                    console.log("amarelo");
+                    break;
+                case x < 60:
+                    document.getElementById("result1").className = "w3-752bluedark result";
+                    break;
+                case x > 59:
+                    document.getElementById("result1").className = "w3-red result";
+                    console.log("vermelho");
+                    break;
+            }
+            document.getElementById("summary").innerHTML = text;
+            console.log(text);
+            return text;
+        }
+        function showFields() {
+            var count = 0;
+            const mod = document.getElementById("mod").value;
+            const type = document.getElementById("type").value;
+            search = mod + type;
+            field("mission");
+            field("nightFactors");
+            field("seaFactors");
+            field("missionParameters");
+            showTitle("missionParameters");
+            field("sliders");
+            field("waivers");
+            field("humanFactor");
+            function field(tag) {
+                var field = document.getElementById(tag).getElementsByTagName("div");
+                for (var i = 0; i < field.length; i++) {
+                    if (field[i].classList.contains(search.toLowerCase())) {
+                        field[i].style.display = "block";
+                        for (el of field[i].querySelectorAll('input[type="radio"]')) {
+                            el.required = true;
+                        }
+                        count = count + 1;
+                    } else {
+                        field[i].style.display = "none";
+                        for (el of field[i].querySelectorAll('input[type="radio"]')) {
+                            el.checked = false;
+                            el.required = false;
+                        }
+                    }
+                }
+            }
+        }
+        function confirm_reset() {
+            x = confirm("Are you sure you want to reset all text?");
+            if (x) {
+                document.getElementById("sendButton").disabled = false;
+                document.getElementById("sendButton").innerHTML =
+                    " <i class='fa fa-spin' id='loadicon' style='display:none'>?</i>Send to Database";
+                for (el of document.getElementsByClassName("resethide")) {
+                    el.style.display = "none";
+                }
+            }
+            document.getElementById("result1").innerText = 0;
+            document.getElementById("summary").innerHTML = "";
+            document.getElementById("result1").className = "w3-blue";
+            document.getElementById("oat").value = "";
+            document.getElementById("dewPoint").value = "";
+            document.getElementById("humidity").innerText = "--";
+            document.getElementById("thermalStress").innerText = "";
+            document.getElementById("thermalValue").value = 0;
+            stress();
+            return x;
+        }
+        //função para submeter o ORM para a folha do Google Sheets
+        window.addEventListener("load", function () {
+            const form = document.getElementById("ormForm");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                if (
+                    !confirm(
+                        "Confirm you want to send to database?\nYou can not undo this action!\n" +
+                        text.replaceAll("<br>", "\n")
+                    )
+                )
+                    return;
+                document.getElementById("loadicon").style.display = "block";
+                const data = new FormData(form);
+                const action = e.target.action;
+                fetch(action, {
+                    method: "POST",
+                    body: data,
+                }).then(() => {
+                    document.getElementById("sucess").style.display = "";
+                    document.getElementById("loadicon").style.display = "none";
+                    document.getElementById("sendButton").disabled = true;
+                    document.getElementById("sendButton").innerText = "Sent";
+                });
+            });
+        });
+        function showAllFields() {
+            var field = document.getElementById("ormwindow").getElementsByTagName("div");
+            for (var i = 0; i < field.length; i++) {
+                field[i].style.display = "block";
+            }
+        }
+        function showTitle(id) {
+            var all = document.getElementById(id).getElementsByTagName("div");
+            let a = 0;
+            for (var i = 0, max = all.length; i < max; i++) {
+                if (isHidden(all[i])) {
+                    //do nothing
+                } else {
+                    a = a + 1;
+                }
+            }
+            if (a > 0) document.getElementById("missParaTitle").style.display = "block";
+            else document.getElementById("missParaTitle").style.display = "none";
+        }
+        function isHidden(el) {
+            var style = window.getComputedStyle(el);
+            return style.display === "none" || style.visibility === "hidden";
+        }
+
+        document.addEventListener("DOMContentLoaded", init, false);
+        textFields = [
+            "airtask",
+            "flightDate",
+            "ETD",
+            "aircraft",
+            "callsign",
+            "mod",
+            "type",
+            "fatigue",
+            "personalFactors",
+            "picExtra",
+        ];
+        radios = [
+            "ceiling",
+            "night",
+            "nvg",
+            "sea",
+            "wave",
+            "operationalEnviroment",
+            "commsCover",
+        ];
+        checkboxes = [
+            "wind",
+            "oat",
+            "clouds",
+            "firefighting",
+            "criticalNight",
+            "iluminance",
+            "rescueResponde",
+            "vessel",
+            "comao",
+            "opsArea",
+            "airspace",
+            "procedureSOPs",
+            "unexperiencedCrew",
+            "performanceClass",
+            "hoistOperations",
+            "hoverCloseToMovingObstacles",
+            "10feetHoverOperations",
+            "terrainFlightLow",
+            "testFlight",
+            "simulatedEmergencies",
+            "dustLanding",
+            "unpreparedLandingSites",
+            "mountainFlight",
+            "formationFlight",
+            "uniqualifiedCrew",
+            "ShortNoticePlan",
+            "estimatedFlightDuty>10",
+            "Proficiency",
+            "flightDuty>14H",
+            "crewFlyingLimit",
+            "crewRestReduced",
+            "noSarSupport",
+            "mntFerryFlight",
+        ];
+
+        function init() {
+            // cria as variaveis dos campos de escrita
+            textFields.forEach((a) => {
+                window[a] = document.getElementsByName(a);
+            });
+            radios.forEach((a) => {
+                window[a] = document.getElementsByName(a);
+            });
+            checkboxes.forEach((a) => {
+                window[a] = document.getElementsByName(a);
+            });
+        }
+        function saveForm(e) {
+            init();
+
+            let form = {};
+            textFields.forEach((a) => {
+                form[a] = window[a][0].value;
+            });
+            radios.forEach((a) => {
+                window[a].forEach((d) => {
+                    if (d.checked) form[a] = d.value;
+                });
+            });
+            checkboxes.forEach((a) => {
+                form[a] = [];
+
+                window[a].forEach((c) => {
+                    if (c.checked) form[a].push(c.value);
+                });
+            });
+            document.getElementById("ormForm").dataset.saved = JSON.stringify(form);
+            console.log("form saved in data attibute");
+        }
+        /**
+         * This function displays a message
+         * on the page for 1 second
+         *
+         * @param {String} message
+         */
+        const displayAlert = (message) => {
+            alertBox.innerText = message; // add the message into the alert box
+            alertBox.style.display = "block"; // make the alert box visible
+            setTimeout(function () {
+                alertBox.style.display = "none"; // hide the alert box after 1 second
+            }, 1000);
+        };
+
+        const populateForm = () => {
+            init();
+            console.log("load form");
+            let cached = document.getElementById("ormForm").dataset.saved;
+            if (cached) {
+                cached = JSON.parse(cached);
+                textFields.forEach((a) => {
+                    window[a][0].value = cached[a];
+                });
+                radios.forEach((a) => {
+                    if (cached[a]) {
+                        window[a].forEach((d) => {
+                            if (d.value === cached[a]) d.checked = true;
+                        });
+                    }
+                });
+                checkboxes.forEach((a) => {
+                    if (cached[a]) {
+                        window[a].forEach((c) => {
+                            if (cached[a].includes(c.value)) c.checked = true;
+                        });
+                    }
+                    getValues();
+                });
+            }
+        };
+
+        function relativeHumidity(temp, dewPoint) {
+            // Calculate the saturation vapor pressure
+            let satVapPressure =
+                6.11 * Math.pow(10, (7.5 * dewPoint) / (237.7 + dewPoint));
+
+            // Calculate the actual vapor pressure
+            let actVapPressure = 6.11 * Math.pow(10, (7.5 * temp) / (237.7 + temp));
+
+            // Calculate relative humidity
+            let relativeHumidity = (satVapPressure / actVapPressure) * 100;
+
+            return relativeHumidity;
+        }
+
+        function stress() {
+            let oat = document.getElementById("oat").value;
+            let dew = document.getElementById("dewPoint").value;
+            if (oat == "" || dew == "") {
+                const cells = document.querySelectorAll(`#${"stress"} td`);
+                cells.forEach((cell) => cell.classList.remove("h-border"));
+                console.log("sem valores");
+                return;
+            }
+
+            dew = relativeHumidity(oat, dew);
+
+            let table = document
+                .getElementById("stress")
+                .getElementsByTagName("tbody")[0];
+            let classes;
+
+            const linhaValues = {
+                21: 3,
+                24: 4,
+                27: 5,
+                30: 6,
+                32: 7,
+                35: 8,
+                38: 9,
+                40: 10,
+                43: 11,
+                46: 12,
+                49: 13,
+            };
+
+            const colunaValues = {
+                10: 3,
+                20: 4,
+                30: 5,
+                40: 6,
+                50: 7,
+                60: 8,
+                70: 9,
+                80: 10,
+            };
+            let linha = 13; // default value
+            let coluna = 10; // default value
+
+            for (const oatLimit in linhaValues) {
+                if (Number(oat) <= oatLimit) {
+                    linha = linhaValues[oatLimit];
+                    break;
+                }
+            }
+
+            for (const humLimit in colunaValues) {
+                if (Number(dew) <= humLimit) {
+                    coluna = colunaValues[humLimit];
+                    break;
+                }
+            }
+
+            //estye ciclo não serve porque há células
+            for (var i = 0, row; (row = table.rows[i]); i++) {
+                for (var j = 0, col; (col = row.cells[j]); j++) {
+                    if (i == linha - 3 && j == coluna - 2) {
+                        row.cells[j].classList.add("h-border");
+                        classes = row.cells[j].classList;
+                    } else {
+                        row.cells[j].classList.remove("h-border");
+                    }
+                }
+            }
+
+            const thermalstress = classes.contains("w3-green")
+                ? 0
+                : classes.contains("w3-yellow")
+                    ? 4
+                    : 8;
+            document.getElementById("humidity").innerText = Math.round(dew);
+            document.getElementById("thermalStress").innerText =
+                document.getElementsByName("thermalStress")[0].value = thermalstress;
+        }
+
+        function seaWave(id, lat, long) {
+            const d = new Date();
+            let hour = d.getHours();
+            let div = document.getElementById(id);
+
+            console.log("wave Called");
+            var bdcApi =
+                "https://marine-api.open-meteo.com/v1/marine?latitude=" +
+                lat +
+                "&longitude=" +
+                long +
+                "&hourly=wave_height";
+
+            getApi(bdcApi)
+                .then((data) => {
+                    // handle success
+                    div.innerHTML =
+                        data.hourly.wave_height[hour] +
+                        " m (" +
+                        data.hourly.wave_height[hour + 6] +
+                        " m)";
+                })
+                .catch((error) => {
+                    // handle error
+                });
+        }
+
+        seaWave("acoresWave", 38.34, -27.33);
+        seaWave("portoSantoWave", 32.9, -16.51);
+        seaWave("lagoaWave", 38.51, -9.249);
+        seaWave("sesimbraWave", 38.38, -9.089);
+
+
+
+
+
+    </script>
+</body>
+
+</html>
